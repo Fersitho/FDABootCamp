@@ -1,0 +1,37 @@
+.bodyHome {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0px;
+    font-family: 'Barlow', sans-serif;
+    color: #ffff;
+    background: linear-gradient(#141414, #2b2f61);
+    font-size: 17px;
+}
+
+.headerHome{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.headerHome h1 {
+    font-weight: 500;
+    color: #dd890e;
+}
+
+a {
+    text-decoration: none;
+    color: #ffff;
+    cursor: pointer;
+    transition: color 500ms;
+}
+
+a:hover {
+    color: #dd890e;
+}
