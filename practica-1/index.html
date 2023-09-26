@@ -1,103 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/62ca64f206.js" crossorigin="anonymous"></script>
+    <title>Pra 1 HTML/title>
 
-    <title>FILMAX</title>
+        <script src="https://kit.fontawesome.com/62ca64f206.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="background-color: black; color: #ffff;">
+<body>
     <header>
+        <!-- Encabezado de la página -->
+        <!-- 
+            El figure con img + figcaption es bueno ponerlo para el SEO y ocultarlo para la vista? 
+            o ponemos solo img sin figure para el logo?
+        -->
+        <figure>
+            <img src="logo.png" alt="Logotipo FILMAX"></img>
+
+            <figcaption style="display: none;">Filmax es la mejor web para ver peliculas online.</figcaption>
+        </figure>
+
+        <nav>
+
+        </nav>
+        <!-- 
+            El buscador y los links redes sociales, son un div o una section?  
+        -->
         <section>
-            <figure style="background-color: black ;">
-                <img src="./img/logo-1x.png" alt="Logotipo FILMAX"></img>
-                <figcaption style="display: none;"></figcaption>
-            </figure>
 
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Features</li>
-                    <li>About</li>
-                    <li>News</li>
-                    <li>Contacts</li>
-                </ul>
-            </nav>
-
-            <section>
-                <search>
-                    <label for="busqueda">
-                        <i class="fa-regular fa-magnifying-glass" style="color: #ffffff;"></i>
-                    </label>
-                    <input id="busqueda" type="search" />
-
-                </search>
-                <section>
-                    <ul>
-                        <li><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></li>
-                        <li><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></li>
-                        <li><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></li>
-                    </ul>
-                </section>
-            </section>
         </section>
-
-        
     </header>
+    <nav>
+        <!-- Menú de navegación -->
+    </nav>
     <main>
-        <section>
-
-            <img src="img/top-promo.jpg">
-
-
-            <section>
-
-
-                <h2>RECENTS NEWS</h2>
-
-                <article>
-                    <img src="./img/post-5-copyright-97x81.jpg" alt="Foto noticia 1" />
-                    <figcaption style="display: none;"> Texto descriptivo noticia 1</figcaption>
-                    <div>
-                        <h2> Noticia 1 </h2>
-                        <p> Fecha </p>
-                    </div>
-
-                </article>
-
-                <article>
-                    <img src="./img/post-6-copyright-97x81.jpg" alt="Foto noticia 2" />
-                    <figcaption style="display: none;"> Texto descriptivo noticia 2</figcaption>
-                    <div>
-                        <h2> Noticia 2 </h2>
-                        <p> Fecha </p>
-                    </div>
-
-                </article>
-
-                <article>
-                    <img src="./img/post-12-copyright-97x81.jpg" alt="Foto noticia 3" />
-                    <figcaption style="display: none;"> Texto descriptivo noticia 3</figcaption>
-                    <div>
-                        <h2> Noticia 3 </h2>
-                        <p> Fecha </p>
-                    </div>
-
-                </article>
-
-            </section>
-
-            <section>
-                <h2> TYLER PERRY´S MADEA HALLOWENN</h2>
-                <p> Texto descriptivo </p>
-                <a href="#">READ MORE <img src="img/iconoflecharight"></a>
-            </section>
-        </section>
+        <!-- Contenido principal de la página -->
     </main>
     <footer>
+        <!-- Pie de página -->
     </footer>
 </body>
 
