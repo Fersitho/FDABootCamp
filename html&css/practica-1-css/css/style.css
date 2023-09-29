@@ -1,27 +1,92 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', serif;
 }
+
+.hoverCss{
+    transition: color 900ms ease,fill 700ms ease;
+    cursor: pointer;
+}
+
+.hoverCss:hover {
+    color: #e8912f;
+    fill: #e8912f;
+}
+
+
+
+
 .body {
     background-color: #ffff;
     width: 100%;
     height: 100vh;
-}
-
-.header {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
     background-color: #1e1e1e;
-    color: #ffff;
+    padding: 0 2rem;
+
 }
 
-li,
-ul {
+header .navHeader nav .navHeaderUl li {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 20px;
+    border-right: 1px solid #4f4f4f;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header .navHeader nav .navHeaderUl li:last-child {
+    border: none;
+}
+li {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+.navHeaderUl ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.header {
+    grid-column: 1;
+    background-color: #1e1e1e;
+    color: #ffff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.navHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    block-size: 100px;
+    
+}
+
+.newsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+.maxContent {
+    width: 100%;
+    max-width: 1280px;
+}
+
 .header nav ul li a svg {
     fill: #ffff;
-    transition: fill 0.4s;
+    width: 25px;
 }
 
 .header nav ul li a svg:hover {
@@ -29,5 +94,146 @@ ul {
 }
 
 .logoHeader {
-    margin: 20px;
+    /* margin: 20px; */
 }
+
+.navHeaderUl {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.busquedaRedes {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+.busquedaRedes search button , .busquedaRedes search span , .busquedaRedes nav  ul li a{
+    background-color: transparent;
+    border: 0;
+    display: flex;
+}
+
+.busquedaRedes search button svg{
+    fill: #ffffff;
+    width: 25px;
+}
+
+
+main {
+    grid-column: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.news {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    width: 100%;
+    /* position: relative; */
+}
+.containerNews{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+.bannerNews {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+
+   
+    
+}
+
+.cardFotoNews{
+    background-color: #1e1e1e;
+    padding: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 500px;
+}
+.fotoNews {
+    background-image: url('../assets/img/MicrosoftTeams-image (21).png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 700px;
+
+}
+
+.asideNews {
+    width: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 2rem;
+    gap: 40px;
+}
+
+.asideNews h2 {
+    margin: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.asideNewsBog {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 50%;
+    gap: 25px;
+}
+
+.asideNews .asideNewsBog article {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.asideNews .asideNewsBog article div h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.asideNews .asideNewsBog article div time {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.asideNews .asideNewsBog article div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.asideNews .asideNewsBog article img {
+    object-fit: cover;
+    max-height: 88px;
+}
+
+/* .bannerNews div + div {
+    position: absolute;
+} */
