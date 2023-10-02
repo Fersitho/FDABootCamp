@@ -1,0 +1,141 @@
+.slideRMBFilms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f2f2f2;
+    color: #ffffff;
+    width: 100%;
+    max-block-size: 320px;
+
+
+}
+
+.upMDF {
+    top: -115px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 25px;
+}
+
+.slideRMB {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.slideRMBFilms .slideRMB article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.slideRMBFilms .slideRMB article img {
+    width: 220px;
+}
+
+.containarFilm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 750ms, border-radius 750ms;
+}
+
+.containarFilm>img {
+    
+    transition: border-radius 750ms, transform 750ms;
+}
+
+.containarFilm:hover {
+    box-shadow: 0px 0px 25px grey;
+    border-radius: 12px;
+    
+}
+
+.containarFilm:hover>img {
+    border-radius: 12px;
+    transform: scale(1.2);
+}
+
+.containerNavFilm {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    left: 10px;
+    bottom: 10px;
+}
+
+.navSliderPictures {
+    color: black;
+    text-align: center;
+    position: relative;
+    top: 35px;
+}
+
+main .slideRMBFilms .upMDF nav button {
+    cursor: pointer;
+    color: lightgray;
+    background-color: transparent;
+    border: none;
+    transition: color 750ms;
+}
+
+main .slideRMBFilms .upMDF nav button:hover {
+    color: #ffffff;
+}
+
+
+@media (max-width: 1300px) {
+    main .slideRMBFilms .slideRMB article:nth-child(n + 5) {
+        display: none;
+    }
+}
+
+@media (max-width: 989px) {
+    main .slideRMBFilms .slideRMB article:nth-child(n + 4) {
+        display: none;
+    }
+}
+
+@media (max-width: 749px) {
+    main .slideRMBFilms .slideRMB article:nth-child(n + 3) {
+        display: none;
+    }
+
+    main .slideRMBFilms .upMDF nav {
+        align-self: center;
+    }
+
+    .slideRMB {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 508px) {
+    .upMDF {
+        top: -130px;
+    }
+
+    main .slideRMBFilms .slideRMB article:nth-child(n + 2) {
+        display: none;
+    }
+
+    .slideRMB {
+        justify-content: center;
+    }
+
+}

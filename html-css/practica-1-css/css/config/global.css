@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', serif;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.textWrapBalance {
+    text-wrap: balance;
+}
+.hoverCss {
+    transition: color 900ms ease, fill 700ms ease;
+    cursor: pointer;
+}
+
+.hoverCss:hover {
+    color: #e8912f;
+    fill: #e8912f;
+}
+
+.paddingHomeInline {
+    padding-inline: 15px;
+}
+.paddingHomeBlock {
+    padding-block: 15px;
+}
+
+
+.body {
+    background-color: #ffff;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+
+}
+
+main {
+    grid-column: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.maxContent {
+    width: 100%;
+    max-width: 1280px;
+}
