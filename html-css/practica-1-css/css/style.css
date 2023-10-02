@@ -3,8 +3,14 @@
     font-family: 'Roboto', serif;
 }
 
-.hoverCss{
-    transition: color 900ms ease,fill 700ms ease;
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hoverCss {
+    transition: color 900ms ease, fill 700ms ease;
     cursor: pointer;
 }
 
@@ -13,7 +19,12 @@
     fill: #e8912f;
 }
 
-
+.paddingHomeInline {
+    padding-inline: 15px;
+}
+.paddingHomeBlock {
+    padding-block: 15px;
+}
 
 
 .body {
@@ -23,30 +34,38 @@
     display: grid;
     grid-template-columns: 100%;
     justify-content: center;
-    background-color: #1e1e1e;
-    padding: 0 2rem;
 
 }
+
 
 header .navHeader nav .navHeaderUl li {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    padding: 3px 20px;
-    border-right: 1px solid #4f4f4f;
+    padding: 8px 5px;
+    border-bottom: 1px solid transparent;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 14px;
+
+    transition: border-bottom 750ms;
+
 }
 
-header .navHeader nav .navHeaderUl li:last-child {
-    border: none;
+
+header .navHeader nav .navHeaderUl span {
+    color: #4f4f4f;
+    padding-inline: 15px;
 }
-li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+
+header .navHeader nav .navHeaderUl li:hover {
+
+    border-bottom: 1px solid red;
 }
+
+
 
 .navHeaderUl ul {
     display: flex;
@@ -70,7 +89,8 @@ li {
     align-items: center;
     justify-content: space-between;
     block-size: 100px;
-    
+    padding: 0 15px;
+
 }
 
 .newsDiv {
@@ -78,7 +98,9 @@ li {
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
+    
 }
+
 .maxContent {
     width: 100%;
     max-width: 1280px;
@@ -86,13 +108,12 @@ li {
 
 .header nav ul li a svg {
     fill: #ffff;
-    width: 25px;
+    width: 18px;
 }
 
 .header nav ul li a svg:hover {
     fill: #e8912f;
 }
-
 
 
 .navHeaderUl {
@@ -109,15 +130,18 @@ li {
     justify-content: center;
     gap: 25px;
 }
-.busquedaRedes search button , .busquedaRedes search span , .busquedaRedes nav  ul li a{
+
+.busquedaRedes search button,
+.busquedaRedes search span,
+.busquedaRedes nav ul li a {
     background-color: transparent;
     border: 0;
     display: flex;
 }
 
-.busquedaRedes search button svg{
+.busquedaRedes search button svg {
     fill: #ffffff;
-    width: 25px;
+    width: 18px;
 }
 
 
@@ -138,14 +162,18 @@ main {
     background-color: #1e1e1e;
     color: #ffffff;
     width: 100%;
+    padding-block-end: 200px;
     /* position: relative; */
 }
-.containerNews{
+
+.containerNews {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     position: relative;
+    padding: 0 15px;
 }
+
 .bannerNews {
     display: flex;
     flex-flow: column wrap;
@@ -153,18 +181,20 @@ main {
     justify-content: center;
     width: 70%;
 
-   
-    
+
+
 }
 
-.cardFotoNews{
+.cardFotoNews {
     background-color: #1e1e1e;
     padding: 50px;
     position: absolute;
     right: 0;
     bottom: 0;
     max-width: 500px;
+    z-index: 8;
 }
+
 .fotoNews {
     background-image: url('../assets/img/MicrosoftTeams-image (21).png');
     background-repeat: no-repeat;
@@ -180,9 +210,13 @@ main {
     flex-flow: column nowrap;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 0 2rem;
+    padding-inline-start: 20px;
     gap: 40px;
+
+    transition: width 750ms;
 }
+
+
 
 .asideNews h2 {
     margin: 0;
@@ -211,6 +245,7 @@ main {
 .asideNews .asideNewsBog article div h3 {
     margin: 0;
     font-size: 1rem;
+    text-wrap: balance;
 }
 
 .asideNews .asideNewsBog article div time {
@@ -230,6 +265,89 @@ main {
 .asideNews .asideNewsBog article img {
     object-fit: cover;
     max-height: 88px;
+}
+
+
+
+.slideRMBFilms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f2f2f2;
+    color: #ffffff;
+    width: 100%;
+    max-block-size: 320px;
+    
+    
+}
+
+.upMDF{
+    top: -115px;
+    position: relative;
+}
+
+.slideRMB{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.slideRMBFilms .slideRMB article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.slideRMBFilms .slideRMB article img{
+    width: 220px;
+}
+
+.containarFilm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+
+    cursor: pointer;
+    transition: box-shadow 750ms;
+}
+
+.containarFilm:hover{
+    box-shadow: 0px 0px 25px grey;
+}
+
+.containerNavFilm{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    left: 10px;
+    bottom: 10px;
+}
+
+.navSliderPictures {
+    color: black;
+    text-align: center;
+    position: relative;
+    top: 35px;
+}
+
+
+@media (max-width: 875px) {
+    .asideNews {
+        width: 60%;
+    }
+
+    .fotoNews {
+        background-position: top;
+    }
 }
 
 /* .bannerNews div + div {
