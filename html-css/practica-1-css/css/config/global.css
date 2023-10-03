@@ -9,23 +9,23 @@ li {
     margin: 0;
 }
 
-.textWrapBalance {
+.text-wrap-balance {
     text-wrap: balance;
 }
-.hoverCss {
+.hover-css {
     transition: color 900ms ease, fill 700ms ease;
     cursor: pointer;
 }
 
-.hoverCss:hover {
+.hover-css:hover {
     color: #e8912f;
     fill: #e8912f;
 }
 
-.paddingHomeInline {
+.padding-home-inline {
     padding-inline: 15px;
 }
-.paddingHomeBlock {
+.padding-home-block {
     padding-block: 15px;
 }
 
@@ -33,9 +33,10 @@ li {
 .body {
     background-color: #ffff;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 500px;
     justify-content: center;
 
 }
@@ -48,7 +49,7 @@ main {
     justify-content: flex-start;
 }
 
-.maxContent {
+.max-content {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1200px;
 }
