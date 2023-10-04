@@ -3,32 +3,41 @@ header .nav-header nav .nav-header-ul li {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    padding: 8px 5px;
+    padding: 15px 2px;
     border-bottom: 1px solid transparent;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-
+   
+    
     transition: border-bottom 750ms;
+
+}
+
+header .nav-header nav .nav-header-ul li a{
+    
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .75px;
+    text-transform: uppercase;
 
 }
 
 
 header .nav-header nav .nav-header-ul span {
     color: #4f4f4f;
-    padding-inline: 15px;
+    padding-inline: 20px;
 }
 
 
 header .nav-header nav .nav-header-ul li:hover {
 
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #e0041d;
 }
 
 
 
 .nav-header-ul ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -39,16 +48,21 @@ header .nav-header nav .nav-header-ul li:hover {
     grid-column: 1;
     background-color: #1e1e1e;
     color: #ffff;
+    
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .nav-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    block-size: 100px;
+    block-size: 65px;
     padding: 0 15px;
 
 }
@@ -91,3 +105,9 @@ header .nav-header nav .nav-header-ul li:hover {
     width: 18px;
 }
 
+.busqueda-redes span {
+    color: #A8A8A8;
+    padding: 0px 25px;
+    font-size: 25px;
+    font-weight: 300;
+}

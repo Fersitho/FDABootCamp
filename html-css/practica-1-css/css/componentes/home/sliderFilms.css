@@ -182,10 +182,12 @@ main .slide-rmb-films .nav-sile-rmb-films nav button {
     transition: color 750ms;
 
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
     font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 1.1px;
+
+    
 }
 
 main .slide-rmb-films .nav-sile-rmb-films nav button:first-child {
@@ -257,7 +259,9 @@ main .slide-rmb-films .nav-sile-rmb-films nav button:hover {
     main .slide-rmb-films .slide-rmb article:nth-child(n + 2) {
         display: none;
     }
-
+.slide-rmb-films .slide-rmb article {
+    width: unset;
+}
     .slide-rmb-films .slide-rmb article img {
         width: 220px;
     }

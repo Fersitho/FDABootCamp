@@ -3,7 +3,7 @@
 @import url('../css/componentes/home/header.css');
 @import url('../css/componentes/home/recentNewsPicture.css');
 @import url('../css/componentes/home/sliderFilms.css');
-
+@import url(../css/componentes/home/section-destacada-film.css);
 @import url('../css/config/global.css');
 
 @import url('../css/config/normalize.css');
