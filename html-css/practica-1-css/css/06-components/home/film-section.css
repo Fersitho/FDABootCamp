@@ -1,0 +1,196 @@
+.section-film {
+    display: flex;
+
+    & article {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        color: #ffffff;
+
+        &:hover .section-film-buttons {
+            bottom: 0;
+            cursor: pointer;
+            opacity: 1;
+            position: relative;
+            height: auto;
+            margin-block-start: 40px;
+            margin-block-end: 20px;
+
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255, 0, 0, 0));
+            z-index: 1;
+        }
+    }
+
+    & img {
+        width: 100%;
+        object-fit: cover;
+        position: relative;
+        display: inline-block;
+    }
+
+    & img+div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 30px;
+        padding: 1em 2.38em 0;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+    }
+
+    & img+div::before {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 44px;
+        background-color: #f8b350;
+
+    }
+
+    & div {
+
+        & h3 {
+            padding-block-start: 30px;
+            padding-block-end: 10px;
+            font-size: 27px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transform: scaleY(0.90);
+            font-family: 'Roboto Condensed', serif;
+        }
+
+        & div a {
+            font-size: 13px;
+            color: #BDBDBD;
+            transition: color 750ms;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+
+        .section-film-buttons {
+            position: relative;
+            width: 100%;
+            bottom: -64px;
+            transition: bottom 750ms, margin 750ms, opacity 750ms;
+            display: flex;
+            flex-flow: wrap;
+            align-items: center;
+            justify-content: flex-start;
+            opacity: 0;
+            gap: 18px;
+
+            
+            & button {
+                background: transparent;
+                border: unset;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                font-size: 13px;
+                color: #BDBDBD;
+                text-wrap: nowrap;
+                padding: 0;
+                font-size: 11px;
+                font-family: 'Roboto Condensed', serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #ffffff;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: color 750ms;
+
+                &:hover {
+                    color: #BDBDBD;
+                }
+                &:hover::before {
+                    color: #BDBDBD;
+                }
+                &::before {
+                    font-family: "Font Awesome 6 Pro";
+                    font-size: 12px;
+                    font-weight: 900;
+                    content: "\f04b";
+                    margin-inline-end: 12px;
+                    color: #f8b350;
+                    padding-left: 2px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 33px;
+                    height: 33px;
+                    border-radius: 50px;
+                    background-color: #2e3036;
+                    transition: color 750ms;
+                }
+
+            }
+
+            & a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-wrap: nowrap;
+                font-size: 11px;
+                font-family: 'Roboto Condensed', serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #ffffff;
+                letter-spacing: 1px;
+                transition: color 750ms;
+
+                &:hover {
+                    color: #BDBDBD;
+                }
+                &:hover::before {
+                    color: #BDBDBD;
+                }
+                &::before {
+                    font-family: "Font Awesome 6 Pro";
+                    font-size: 12px;
+                    font-weight: 300;
+                    content: "\f061";
+                    margin-inline-end: 12px;
+                    color: #f8b350;
+                    padding-left: 2px;
+                    transition: color 750ms;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 33px;
+                    height: 33px;
+                    border-radius: 50px;
+                    background-color: #2e3036;
+                    ;
+                }
+            }
+
+        }
+
+
+    }
+
+
+}

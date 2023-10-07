@@ -16,7 +16,7 @@
     color: #ffffff;
     width: 100%;
     padding-block-end: 200px;
-    /* position: relative; */
+    padding-block-start: 20px;
 }
 
 .container-news {
@@ -103,12 +103,13 @@
 
 .aside-news h2 {
     margin: 0;
-    font-size: 17px;
+    font-size: 18px;
     text-transform: uppercase;
     font-family: "Roboto Condensed", sans-serif;
     line-height: 1.15em;
     font-weight: 700;
     font-style: normal;
+    transform: scaleY(0.85);
 }
 
 .aside-news h2::after {
@@ -142,13 +143,16 @@
 
 .aside-news .aside-news-bog article div h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 16px;
     text-wrap: balance;
-    font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 0.75px;
     transition: color 750ms;
     cursor: pointer;
     
+}
+.aside-news .aside-news-bog article div h3 a {
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .aside-news .aside-news-bog article div h3:hover {

@@ -14,7 +14,7 @@
 
 }
 
-.nav-sile-rmb-films {
+.nav-slide-rmb-films {
     top: -115px;
     position: relative;
 
@@ -144,9 +144,17 @@
 
 .nav-slider-circles {
     color: black;
-    text-align: center;
-    position: relative;
-    top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+
+    
 }
 
 .nav-slider-circles ul {
@@ -174,7 +182,7 @@
     background-color: #e0041d;
 }
 
-main .slide-rmb-films .nav-sile-rmb-films nav button {
+main .slide-rmb-films .nav-slide-rmb-films nav button {
     cursor: pointer;
     color: lightgray;
     background-color: transparent;
@@ -186,21 +194,21 @@ main .slide-rmb-films .nav-sile-rmb-films nav button {
     text-transform: uppercase;
     font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 1.1px;
-
+    transform: scaleX(0.90) scaleY(0.85);
     
 }
 
-main .slide-rmb-films .nav-sile-rmb-films nav button:first-child {
+main .slide-rmb-films .nav-slide-rmb-films nav button:first-child {
 
     color: #ffffff;
 }
 
 
-main .slide-rmb-films .nav-sile-rmb-films nav button:hover {
+main .slide-rmb-films .nav-slide-rmb-films nav button:hover {
     color: #ffffff;
 }
 
-.nav-sile-rmb-films nav span {
+.nav-slide-rmb-films nav span {
     color: #777777;
 }
 .container-nav-film h3 {
@@ -242,7 +250,7 @@ main .slide-rmb-films .nav-sile-rmb-films nav button:hover {
         display: none;
     }
 
-    main .slide-rmb-films .nav-sile-rmb-films nav {
+    main .slide-rmb-films .nav-slide-rmb-films nav {
         align-self: center;
     }
 
@@ -252,7 +260,7 @@ main .slide-rmb-films .nav-sile-rmb-films nav button:hover {
 }
 
 @media (max-width: 508px) {
-    .nav-sile-rmb-films {
+    .nav-slide-rmb-films {
         top: -130px;
     }
 

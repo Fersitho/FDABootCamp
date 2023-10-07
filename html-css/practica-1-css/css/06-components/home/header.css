@@ -18,6 +18,7 @@ header .nav-header nav .nav-header-ul li a{
     font-size: 14px;
     letter-spacing: .75px;
     text-transform: uppercase;
+    transform: scaleY(0.85);
 
 }
 

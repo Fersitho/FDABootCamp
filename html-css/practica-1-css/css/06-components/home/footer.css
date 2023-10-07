@@ -1,0 +1,32 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 75px 0;
+
+    .container {
+        display: grid;
+        padding: 0 15px;
+
+        grid-template-columns: repeat(4, auto);
+
+        & nav,
+        & section {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline: 15px;
+            
+        }
+
+        & figure {
+            margin-inline: 0px;
+            figcaption {
+                margin-block-start: 25px;
+            }
+        }
+    }
+
+}
