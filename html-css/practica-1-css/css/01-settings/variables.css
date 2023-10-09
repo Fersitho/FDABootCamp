@@ -1,5 +1,12 @@
-/* 
-rojo1: #e0041d 
-fondo negro: #1a1d24
+:root {
+    --white-1: #ffffff;
 
-*/
+    --black-1: #4f4f4f;
+    --black-2: #1e1e1e;
+
+    --red-1: #e0041d;
+    --red-2: #e0011a;
+
+    --gris-1: #BDBDBD;
+    --gris-2: #A8A8A8;
+}

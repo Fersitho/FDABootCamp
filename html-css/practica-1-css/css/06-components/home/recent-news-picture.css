@@ -12,8 +12,8 @@
     flex-flow: row wrap;
     align-items: stretch;
     justify-content: center;
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: var(--black-2);
+    color: var(--white-1);
     width: 100%;
     padding-block-end: 200px;
     padding-block-start: 20px;
@@ -39,7 +39,7 @@
 }
 
 .card-foto-news {
-    background-color: #1e1e1e;
+    background-color: var(--black-2);
     padding: 30px;
     padding-block-end: 5px;
     position: absolute;
@@ -56,7 +56,7 @@
 }
 
 .card-foto-news p {
-    color: #A8A8A8;
+    color: var(--gris-2);
     font-size: 14px;
     margin: 25px 0;
     font-family: "Roboto", sans-serif;
@@ -73,10 +73,10 @@
     font-weight: 300;
     content: "\f061";
     margin-inline-start: 12px;
-    color: #e0041d;
+    color: var(--red-1);
 }
 .card-foto-news a:hover {
-    color: #e0041d;
+    color: var(--red-1);
 }
 
 .foto-news {
@@ -117,7 +117,7 @@
     content: '';
     height: 1px;
     width: 28px;
-    background: red;
+    background: var(--red-1);
     vertical-align: middle;
     margin-left: 15px;
 }
@@ -156,7 +156,7 @@
 }
 
 .aside-news .aside-news-bog article div h3:hover {
-    color: #A8A8A8;
+    color: var(--gris-2);
 }
 
 .aside-news .aside-news-bog article div time {
@@ -165,14 +165,14 @@
     font-weight: 300;
     text-transform: uppercase;
     font-family: "Roboto Condensed", sans-serif;
-    color: #A8A8A8;
+    color: var(--gris-2);
     letter-spacing: 1px;
     transition: color 750ms;
     cursor: pointer;
 }
 
 .aside-news .aside-news-bog article div time:hover {
-    color: #ffffff;
+    color: var(--white-1);
     
 }
 

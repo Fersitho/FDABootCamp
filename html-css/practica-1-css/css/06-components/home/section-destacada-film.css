@@ -3,15 +3,15 @@
     flex-flow: row wrap;
     align-items: stretch;
     justify-content: center;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--white-1);
+    color: var(--white-1);
     width: 100%;
     padding-block-start: 80px;
 }
 
 .container-samurai {
-    background-color: #ffffff;
-    color: #1e1e1e;
+    background-color: var(--white-1);
+    color: var(--black-2);
     padding-block: 75px;
     display: flex;
     justify-content: end;
@@ -34,7 +34,7 @@
     padding-inline-end: 100px;
 
     border-radius: 15px;
-    background: #ffffffe3;
+    background: var(--white-1)e3;
 }
 
 .container-samurai::before {
@@ -48,7 +48,7 @@
     content: '';
     width: 45px;
     height: 1px;
-    background-color: #e0041d;
+    background-color: var(--red-1);
     position: relative;
     top: -25px;
 }
@@ -91,7 +91,7 @@
 }
 
 .container-samurai-info-span h6{
-    color: black;
+    color: var(--black-2);
     letter-spacing: 0.2px;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .container-samurai-info nav ul li:first-child{
-    color: #e0041d;
+    color: var(--red-1);
     
 }
 
@@ -123,7 +123,7 @@
     font-family: "Font Awesome 5 Pro";
     font-weight: 300;
     content: "\f061";
-    color: #e0041d;
+    color: var(--red-1);
     font-size: 13px;
     margin-inline-end: 5px;
     transition: color 750ms;
@@ -145,7 +145,7 @@
 }
 
 .container-samurai-info nav ul li:last-child:hover, .container-samurai-info nav ul li:hover:last-child::before{
-    color: #e0041d;
+    color: var(--red-1);
 }
 
 @media (max-width: 900px) {

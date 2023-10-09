@@ -11,7 +11,7 @@
         justify-content: center;
         cursor: pointer;
 
-        color: #ffffff;
+        color: var(--white-1);
 
         &:hover .section-film-buttons {
             bottom: 0;
@@ -80,10 +80,10 @@
 
         & div a {
             font-size: 13px;
-            color: #BDBDBD;
+            color: var(--gris-1);
             transition: color 750ms;
             &:hover {
-                color: #ffffff;
+                color: var(--white-1);
             }
         }
 
@@ -106,25 +106,25 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #ffffff;
+                color: var(--white-1);
                 font-size: 13px;
-                color: #BDBDBD;
+                color: var(--gris-1);
                 text-wrap: nowrap;
                 padding: 0;
                 font-size: 11px;
                 font-family: 'Roboto Condensed', serif;
                 font-weight: 700;
                 text-transform: uppercase;
-                color: #ffffff;
+                color: var(--white-1);
                 letter-spacing: 1px;
                 cursor: pointer;
                 transition: color 750ms;
 
                 &:hover {
-                    color: #BDBDBD;
+                    color: var(--gris-1);
                 }
                 &:hover::before {
-                    color: #BDBDBD;
+                    color: var(--gris-1);
                 }
                 &::before {
                     font-family: "Font Awesome 6 Pro";
@@ -156,15 +156,15 @@
                 font-family: 'Roboto Condensed', serif;
                 font-weight: 700;
                 text-transform: uppercase;
-                color: #ffffff;
+                color: var(--white-1);
                 letter-spacing: 1px;
                 transition: color 750ms;
 
                 &:hover {
-                    color: #BDBDBD;
+                    color: var(--gris-1);
                 }
                 &:hover::before {
-                    color: #BDBDBD;
+                    color: var(--gris-1);
                 }
                 &::before {
                     font-family: "Font Awesome 6 Pro";
