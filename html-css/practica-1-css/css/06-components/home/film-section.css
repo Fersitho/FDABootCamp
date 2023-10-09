@@ -62,7 +62,7 @@
         display: block;
         height: 1px;
         width: 44px;
-        background-color: #f8b350;
+        background-color: var(--orange-1);
 
     }
 
@@ -132,7 +132,7 @@
                     font-weight: 900;
                     content: "\f04b";
                     margin-inline-end: 12px;
-                    color: #f8b350;
+                    color: var(--orange-1);
                     padding-left: 2px;
 
                     display: flex;
@@ -172,7 +172,7 @@
                     font-weight: 300;
                     content: "\f061";
                     margin-inline-end: 12px;
-                    color: #f8b350;
+                    color: var(--orange-1);
                     padding-left: 2px;
                     transition: color 750ms;
 
