@@ -29,8 +29,8 @@ h6 {
 }
 
 .hover-css:hover {
-    color: #e8912f;
-    fill: #e8912f;
+    color: var(--orange-1);
+    fill: var(--orange-1);
 }
 
 .padding-home-inline {
