@@ -163,3 +163,12 @@
 
     
 }
+
+@media (max-width: 490px) {
+
+    .container-samurai-info {
+        padding-inline-end: 40px;
+    }
+
+    
+}
