@@ -65,3 +65,75 @@ main {
     width: 100%;
     max-width: 1200px;
 }
+
+.menu-fixed {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    
+    z-index: 9;
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        
+
+        & li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--red-1);
+            box-shadow: 0 0 2px var(--gris-5);
+            cursor: pointer;
+
+            &::after {
+                font-family: "Font Awesome 6 Pro";
+                font-size: 1.2rem;
+                font-weight: 400;
+                color: var(--black-2);
+            }
+
+            &:nth-child(1)::after {
+                content: "\f07a";
+            }
+            &:nth-child(2)::after {
+                content: "\f302";
+            }
+            &:nth-child(3)::after {
+                content: "\f37e";
+            }
+            
+
+        }
+    }
+}
+
+.ancla-top {
+    position: fixed;
+    right: 3rem;
+    bottom: 2rem;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--black-2);
+    cursor: pointer;
+
+        &::after {
+            font-family: "Font Awesome 6 Pro";
+            content: "\f106";
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--white-1);
+        }
+
+        
+
+    
+}
