@@ -1,0 +1,59 @@
+.main-info-film {
+    width: 100%;
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main-info-film-grid {
+        background-color: red;
+        position: relative;
+
+        display: grid;
+        grid-template-columns: 250px calc(100% - 250px);
+        grid-template-rows: 400px;
+        align-content: flex-start;
+
+        padding: 0 15px;
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+
+        .header-info-film {
+            background-color: blue;
+            grid-column: 1/3;
+            max-width: 1200px;
+        }
+
+        .aside-nav-info {
+            background-color: rgb(255, 0, 174);
+
+            grid-row: 2/3;
+
+            position: sticky;
+            top: 65px;
+
+            min-width: 250px;
+            padding-inline-start: 5px;
+            padding-inline-end: 15px;
+        }
+
+        .grid-cont-info {
+            background-color: rgb(99, 99, 169);
+
+            grid-column: 2/3;
+
+            max-width: 1200px;
+            min-height: 150px;
+        }
+
+        .trailer-info-film {
+            display: grid;
+            grid-template-columns: calc(100% - 350px) 350px;
+
+        }
+
+    }
+
+}
