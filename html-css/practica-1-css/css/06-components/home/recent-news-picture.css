@@ -109,7 +109,7 @@
     line-height: 1.15em;
     font-weight: 700;
     font-style: normal;
-    transform: scaleY(0.85);
+    transform: scaleY(0.90);
 }
 
 .aside-news h2::after {
@@ -118,7 +118,7 @@
     height: 1px;
     width: 28px;
     background: var(--red-1);
-    vertical-align: middle;
+    vertical-align: super;
     margin-left: 15px;
 }
 
