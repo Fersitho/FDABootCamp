@@ -76,10 +76,14 @@
                 padding-inline-start: 0;
                 margin-block-end: 1rem;
 
+                & li {
+                    color: var(--gris-5);
+                }
+
                 & li:before {
 
                     font-family: "Font Awesome 6 Pro";
-                    font-weight: 300;
+                    font-weight: 900;
                     content: "\f00c";
                     margin-inline-end: 12px;
                     color: var(--red-1);
@@ -106,6 +110,16 @@
                 & a {
                     font-size: 0.85rem;
                     color: var(--red-2);
+                    transition: color 750ms;
+                    top: -1px;
+                    position: relative;
+                    &:hover {
+                        color: var(--red-3);
+                    }
+                }
+
+                &>a:first-of-type {
+                    margin-right: 5px;
                 }
             }
         }
