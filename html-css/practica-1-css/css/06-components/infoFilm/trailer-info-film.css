@@ -1,0 +1,605 @@
+.trailer-info-film {
+    display: grid;
+    grid-template-columns: calc(100% - 300px) 300px;
+
+    .section-info-contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+        .section-overview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding-block-end: 3.5rem;
+
+            border-block-end: 1px solid var(--gris-4);
+
+            .video-trailar-repro {
+                max-width: 550px;
+                width: 100%;
+                aspect-ratio: 16/9;
+                margin-block: 2rem;
+            }
+
+            .resumen-peli {
+                font-size: 1rem;
+                color: var(--gris-5);
+
+            }
+
+            & cite {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & svg {
+                    fill: var(--red-3);
+                    height: 4rem;
+                    margin: 20px;
+                }
+
+                & div {
+                    display: flex;
+                    flex-direction: column;
+
+                    font-size: 0.90rem;
+                    font-weight: 100;
+
+                    & h4 {
+                        color: var(--gris-5);
+                        font-weight: 400;
+                        font-family: Lora, serif;
+                    }
+
+                    & strong {
+                        text-transform: uppercase;
+                        font-weight: 800;
+                        font-family: "Roboto Condensed", sans-serif;
+                        font-style: normal;
+                    }
+
+                }
+            }
+
+            & ol {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 1rem;
+                width: 100%;
+                padding-inline-start: 0;
+                margin-block-end: 1rem;
+
+                & li:before {
+
+                    font-family: "Font Awesome 6 Pro";
+                    font-weight: 300;
+                    content: "\f00c";
+                    margin-inline-end: 12px;
+                    color: var(--red-1);
+
+                }
+            }
+
+            .tags-films {
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                width: 100%;
+                margin-block-start: 3rem;
+                font-size: 1.3rem;
+                font-family: 'Roboto Condensed', sans-serif;
+
+                & h5 {
+                    text-transform: uppercase;
+                    margin: 0;
+                    margin-inline-end: 0.3rem;
+                    letter-spacing: -1px;
+                }
+
+                & a {
+                    font-size: 0.85rem;
+                    color: var(--red-2);
+                }
+            }
+        }
+
+        .section-about,
+        .some-peli-info-film,
+        .coments-info-film,
+        .add-comment-info-film {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            border-block-end: 1px solid var(--gris-4);
+
+        }
+
+        .section-about {
+
+            padding-block: 3.5rem;
+
+            &>nav {
+                width: 100%;
+
+                & ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding-block-end: 3rem;
+
+                    & li {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+
+                        &:hover>a {
+                            color: var(--red-1);
+                        }
+
+                        & a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Roboto Condensed', sans-serif;
+                            font-size: 1.1rem;
+                            transition: color 750ms;
+
+                            &>h5 {
+                                margin: 0;
+                            }
+
+
+                        }
+
+                        &:first-child {
+                            &>a::before {
+                                font-family: "Font Awesome 6 Pro";
+                                font-weight: 300;
+                                font-size: 0.75rem;
+                                content: "\f061";
+                                transform: rotate(180deg);
+                                margin-inline-end: 12px;
+                                color: var(--black-2);
+                                top: -2px;
+                                position: relative;
+                            }
+                        }
+
+                        &:last-child {
+                            &>a::after {
+                                font-family: "Font Awesome 6 Pro";
+                                font-weight: 300;
+                                content: "\f061";
+                                margin-inline-start: 12px;
+                                font-size: 0.75rem;
+                                color: var(--black-2);
+
+                                top: 2px;
+                                position: relative;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            &>article {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1.5rem;
+
+                &>img {
+                    width: 150px;
+                    max-height: 150px;
+                    aspect-ratio: 1/1;
+                }
+
+                &>div {
+                    &>h3 {
+                        font-family: 'Roboto Condensed', sans-serif;
+                        font-weight: 600;
+                        font-size: 1.4rem;
+                        margin-block-end: 1.5rem;
+                    }
+
+                    &>p {
+                        font-size: 1rem;
+                        color: var(--gris-5);
+                        line-height: 1.5rem;
+                        margin-block-end: 1.5rem;
+                    }
+
+                    &>a {
+                        font-size: 0.8rem;
+                        font-family: "Roboto Condensed", sans-serif;
+                        font-weight: bold;
+                        letter-spacing: 1.5px;
+                        color: var(--red-1);
+                        transition: color 750ms;
+
+                        &::after {
+                            font-family: "Font Awesome 6 Pro";
+                            font-weight: 300;
+                            font-size: 0.7rem;
+                            content: "\f061";
+                            margin-inline-start: 12px;
+                            color: var(--red-1);
+                        }
+
+                        &:hover {
+                            color: var(--red-3);
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+
+        .some-peli-info-film {
+            padding-block: 3.5rem;
+
+            .some-peli-info {
+                padding: 0;
+
+                .container2 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+
+
+
+                    &>h2 {
+                        font-size: 1.7rem;
+                        color: var(--black-3);
+                        text-transform: uppercase;
+                        padding-block-end: 2rem;
+                        font-family: "Roboto Condensed", sans-serif;
+
+
+                    }
+
+
+                    .grid-2-films {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: 1fr;
+                        gap: 2rem;
+                        height: 100%;
+                        width: 100%;
+
+                        &>article {
+                            /* padding: 15px; */
+                            box-sizing: border-box;
+                            background-image: url('../../../assets/img/MicrosoftTeams-image\ \(13\).png');
+
+                            min-width: 230px;
+                            aspect-ratio: 1/1;
+
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            position: relative;
+                            cursor: pointer;
+
+                            color: var(--white-1);
+
+                            & div {
+                                padding: 2em;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                justify-content: flex-start;
+                                /* padding: 3em; */
+                                text-transform: uppercase;
+
+                                & p {
+                                    z-index: 1;
+                                    font-family: "Roboto Condensed", sans-serif;
+                                    padding-block-end: 1rem;
+
+                                    & a {
+                                        color: var(--orange-1);
+                                        margin-inline-end: 0.1rem;
+                                        font-weight: bold;
+                                        font-size: 0.7rem;
+                                        transition: color 750ms;
+
+                                        &:hover {
+                                            color: #c28633;
+                                        }
+                                    }
+
+
+                                }
+
+                                & h3 {
+                                    z-index: 1;
+                                    font-weight: 600;
+                                    font-size: 1.3rem;
+                                    font-family: "Roboto Condensed", sans-serif;
+                                    margin-block-end: 1rem;
+                                }
+
+                                & time {
+                                    display: flex;
+                                    align-items: flex-end;
+                                    justify-content: center;
+                                    gap: 12px;
+                                    z-index: 1;
+                                    font-size: 0.68rem;
+                                    color: var(--gris-4);
+                                    transition: color 750ms;
+
+                                    & p:has(svg) {
+                                        display: flex;
+                                        align-items: center;
+                                    }
+
+                                    &:hover,
+                                    p svg {
+                                        color: var(--white-1);
+                                        fill: var(--white-1);
+                                    }
+
+                                    & p {
+                                        padding: 0;
+                                    }
+
+                                    & p svg {
+                                        fill: var(--gris-4);
+                                        margin-inline-end: 8px;
+                                        font-size: 0.95rem;
+
+                                    }
+
+                                    & p span {
+                                        padding-top: 2px;
+                                    }
+                                }
+                            }
+
+
+                        }
+
+
+
+                        & article::before {
+                            content: '';
+                            background: rgb(0 0 0 / 0.5);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+
+                            transition: background 550ms;
+
+                        }
+
+                        & article:hover::before {
+                            background: rgb(0 0 0 / 0.65);
+                            background-clip: content-box;
+                        }
+
+                        & article:nth-of-type(2) {
+
+                            background-image: url('../../../assets/img/MicrosoftTeams-image\ \(15\).png');
+                        }
+
+
+
+
+
+                    }
+                }
+
+
+
+            }
+        }
+
+    }
+
+    .trailer-info-aside {
+        margin-block: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+
+        .news-refactor {
+            width: 100%;
+            background: var(--gris-3);
+            padding: 1.5rem;
+            align-items: stretch;
+
+            &>div>article>div {
+                &>h3>a {
+                    transition: color 750ms;
+
+                    &:hover {
+                        color: var(--red-1)
+                    }
+                }
+
+                &>time>a {
+                    transition: color 750ms;
+                    color: var(--gris-5);
+
+                    &:hover {
+                        color: var(--black-2)
+                    }
+                }
+
+            }
+
+            & .aside-news-bog>a {
+                text-transform: uppercase;
+                width: 100%;
+                color: var(--black-2);
+                font-size: 0.8rem;
+                font-weight: 600;
+                font-family: 'Roboto Condensed', sans-serif;
+
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding-inline-end: 1rem;
+                border-radius: 5px;
+
+
+                &>span {
+                    display: flex;
+                    width: 100%;
+                    color: var(--white-1);
+                    font-size: 0.75rem;
+                    line-height: 1rem;
+                    margin-inline-end: 1rem;
+                    transition: background 750ms;
+                    padding: 0.7rem 1rem;
+                    border-radius: 5px 0 0 5px;
+
+                    &>svg {
+                        margin-inline-end: 1rem;
+                        height: 0.9rem;
+                        fill: var(--white-1);
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    background: var(--white-1);
+
+                    &>span {
+                        background: #385a98;
+                    }
+
+                }
+
+                &:nth-of-type(2) {
+                    background: var(--white-1);
+
+                    &>span {
+                        background: #1ea4f0;
+                    }
+
+                }
+
+                &:nth-of-type(3) {
+                    background: var(--white-1);
+
+                    &>span {
+                        background: var(--red-1);
+                    }
+
+                    &:hover+span:nth-of-type(1) {
+                        &>span {
+                            background-color: #21365d;
+
+                        }
+                    }
+
+                }
+
+                &:nth-of-type(1):hover {
+                    &>span {
+                        background-color: #21365d;
+                    }
+                }
+
+                &:nth-of-type(2):hover {
+                    &>span {
+                        background-color: #1a85c2;
+                    }
+                }
+
+                &:nth-of-type(3):hover {
+                    &>span {
+                        background-color: var(--red-3);
+                    }
+                }
+
+            }
+
+            & .aside-news-bog>article {
+                & h3 {
+                    transition: color 750ms;
+
+                    &:hover {
+                        color: var(--red-1);
+                    }
+                }
+            }
+
+            & #top-trailers>article {
+                display: flex;
+                flex-direction: column;
+                text-transform: uppercase;
+                cursor: pointer;
+
+                &>img {
+
+                    width: 100%;
+                    min-height: 120px;
+                    aspect-ratio: 380/220;
+
+                    margin-block-end: 1rem;
+
+                }
+
+
+
+                &>div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    &>time {
+                        color: var(--gris-5);
+
+                        &:hover {
+                            color: var(--black-2);
+                        }
+                    }
+
+                    &>h4 {
+                        font-family: 'Roboto Condensed', sans-serif;
+                        margin: 0;
+                        font-size: 0.70rem;
+                        font-weight: 800;
+                        color: var(--orange-1);
+                        transition: color 750ms;
+
+                        &:hover {
+                            color: rgb(188, 127, 14);
+                        }
+                    }
+                }
+            }
+
+
+
+        }
+    }
+
+}
