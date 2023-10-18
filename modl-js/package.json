@@ -1,0 +1,15 @@
+{
+  "name": "modulo-js",
+  "version": "1.0.0",
+  "description": "modulo bootcamp codespace js",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server src -c-1",
+    "dev": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
