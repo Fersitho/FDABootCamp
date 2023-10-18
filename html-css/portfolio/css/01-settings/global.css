@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', serif;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.body {
+    background-color: #ffff;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
+}
+
+.ancla-top {
+    position: fixed;
+    right: 3rem;
+    bottom: 2rem;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--black-2);
+    cursor: pointer;
+
+    &::after {
+        font-family: "Font Awesome 6 Pro";
+        content: "\f106";
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--white-1);
+        transition: color 750ms;
+    }
+
+    &:hover {
+        &::after {
+            color: var(--red-1);
+        }
+
+        &::after {
+            font-family: "Font Awesome 6 Pro";
+            content: "\f106";
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: red;
+            transition: color 750ms;
+        }
+    }
+
+
+
+
+}

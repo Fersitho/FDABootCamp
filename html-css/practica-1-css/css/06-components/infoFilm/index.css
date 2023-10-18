@@ -172,6 +172,7 @@
                         &>h3 {
                             font-family: 'Roboto Condensed', sans-serif;
                             transition: color 750ms;
+                            letter-spacing: 1px;
                         }
 
                         &:hover>h3 {
@@ -184,6 +185,7 @@
                             font-size: 0.9rem;
                             font-family: 'Roboto', sans-serif;
                             transition: color 750ms;
+                            letter-spacing: 0.3px;
                         }
 
                         &:hover>p {

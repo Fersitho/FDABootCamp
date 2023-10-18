@@ -1,0 +1,21 @@
+:root {
+    --white-1: #ffffff;
+    --white-1-70: #fffffff7;
+    
+    --black-1: #4f4f4f;
+    --black-2: #1e1e1e;
+    --black-3: #1a1d24;
+    --azul-negro: #023047;
+    
+    --red-1: #e0041d;
+    --red-2: #e0011a;
+    --red-3: #9e2424;
+    
+    --gris-1: #BDBDBD;
+    --gris-2: #A8A8A8;
+    --gris-3: #f2f2f2;
+    --gris-4: #D2D2D2;
+    --gris-5: #737373;
+
+    --org-1: #F38900;
+}
