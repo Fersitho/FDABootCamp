@@ -1,27 +1,4 @@
-let animalEstado = 'pajaro feliz'
-let maxInsert = 10
-let numbersAleatorios = []
 
-for (let i = 0; i < maxInsert; i++) {
-
-    let numberRandom = Math.round(Math.random() * 100);
-
-    console.log(numberRandom);
-    numbersAleatorios.push(
-        numberRandom
-    )
-
-}
-
-let ordenados = numbersAleatorios.sort()
-
-let masBajo = ordenados[0]
-
-let masAlto = ordenados[numbersAleatorios.length - 1]
-
-    console.log('ordenados', ordenados)
-    console.log('masBajo', masBajo)
-    console.log('masAlto', masAlto)
 // console.log('b contiene como valor:', nombres)
 
 document.getElementById('h1').innerText = 'Hola mundo'
@@ -170,3 +147,28 @@ const sum = (a, b) => {
 }
 
 calculator(2, 3, 'suma', sum)
+
+
+let maxInsert = 10
+let numbersAleatorios = []
+
+for (let i = 0; i < maxInsert; i++) {
+
+    let numberRandom = Math.round(Math.random() * 100);
+
+    console.log(numberRandom);
+    numbersAleatorios.push(
+        numberRandom
+    )
+
+}
+
+let ordenados = numbersAleatorios.sort()
+
+let masBajo = ordenados[0]
+
+let masAlto = ordenados[numbersAleatorios.length - 1]
+
+    console.log('ordenados', ordenados)
+    console.log('masBajo', masBajo)
+    console.log('masAlto', masAlto)
