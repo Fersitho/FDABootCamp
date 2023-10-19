@@ -1,0 +1,18 @@
+.button-org {
+    padding: 0.7rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--org-1);
+
+    color: var(--white-1);
+    font-size: 1rem;
+    /* font-weight: 600; */
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: font-weight 550ms, background-color 550ms;
+
+    &:hover{
+        background-color: var(--org-2);
+        font-weight: 500;
+    }
+}
