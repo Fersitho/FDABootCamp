@@ -1,27 +1,27 @@
-// let animalEstado = 'pajaro feliz'
-// let maxInsert = 8
-// let nombres = []
+let animalEstado = 'pajaro feliz'
+let maxInsert = 10
+let numbersAleatorios = []
 
-// for (let i = 0; i < maxInsert; i++) {
+for (let i = 0; i < maxInsert; i++) {
 
-//     let randomNumber = Math.random();
+    let numberRandom = Math.round(Math.random() * 100);
 
-//     let minValue = 7.00;
-//     let maxValue = 25.00;
+    console.log(numberRandom);
+    numbersAleatorios.push(
+        numberRandom
+    )
 
-//     let scaledNumber = randomNumber * (maxValue - minValue) + minValue;
+}
 
-//     let roundedNumber = scaledNumber.toFixed(2);
+let ordenados = numbersAleatorios.sort()
 
-//     console.log(roundedNumber);
-//     nombres.push({
-//         num: i,
-//         nombre: 'El Nombre-' + i,
-//         size: roundedNumber + ' cm'
-//     })
+let masBajo = ordenados[0]
 
-// }
+let masAlto = ordenados[numbersAleatorios.length - 1]
 
+    console.log('ordenados', ordenados)
+    console.log('masBajo', masBajo)
+    console.log('masAlto', masAlto)
 // console.log('b contiene como valor:', nombres)
 
 document.getElementById('h1').innerText = 'Hola mundo'
@@ -81,11 +81,8 @@ let vowels2 = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
 for (let j = 0; j < vowels2.length - 1; j++) {
 
     const vowelRegex = new RegExp(vowels2[j], 'gi');
-    console.log(text2.match(vowelRegex))
     if (text2.match(vowelRegex) != null && text2.match(vowelRegex).length > 0) {
-
         text2 = text2.replaceAll(vowels2[j], '')
-
     }
 
 }
@@ -138,16 +135,38 @@ function revertText(text) {
 }
 
 function isPalindrome(text) {
-    
+
     let textOriginFormated = removeAccents(formatText(text));
     let textOriginFormatedRevert = revertText(textOriginFormated);
 
     return textOriginFormated == textOriginFormatedRevert ? true : false;
-    
+
 }
 
 
 
 const texto = 'Dábale arroz a la zorra el abad'
 
-console.log('Es palindromo: '+texto+' ?', isPalindrome(texto))
+console.log('Es palindromo: ' + texto + ' ?', isPalindrome(texto))
+
+// CLASE 3 PARTE 2 -- funciones primer orden high order y arrow function
+
+// Las high order functions son aquellas que permiten pasar como argumento funciones y/o devuelven funciones.
+
+let arrayInfo = ['a', 'b', 'c', 'd']
+
+arrayInfo.map((info, key) => console.log(info))
+
+const calculator = (op1, op2, opName, fn) => {
+    console.log(`The result of ${op1} ${op2} ${opName} = ${fn(op1, op2)}`)
+}
+
+const sum = (a, b) => {
+    if (a != NaN && b != NaN) {
+        return parseInt(a) + parseInt(b)
+    } else {
+        return 'Debe enviar numeros.'
+    }
+}
+
+calculator(2, 3, 'suma', sum)
