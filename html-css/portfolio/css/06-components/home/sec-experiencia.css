@@ -1,5 +1,5 @@
 .sec-experiencia {
-    grid-template-columns: 50px 2fr 1fr 50px;
+    grid-template-columns: 50px 2fr 1fr 50px !important;
 
     &>.title-section-center {
         color: var(--org-1);
