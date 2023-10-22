@@ -1,40 +1,40 @@
 .sec-habilidades {
-        .art-img-habilidades {
+    .art-img-habilidades {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding-block-start: 0;
+        padding-block-end: 5.5rem;
+
+        &>div {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+            width: 100%;
             gap: 2rem;
-            padding-block-start: 0;
-            padding-block-end: 5.5rem;
 
-            &>div {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
+            &>img {
                 width: 100%;
-                gap: 2rem;
+                max-width: 150px;
+                height: 150px;
+                box-shadow: inset 0px 0px 15px #0230474b;
+                object-fit: contain;
+                border-radius: 25px;
+                padding: 20px;
 
-                &>img {
-                    width: 100%;
-                    max-width: 150px;
-                    height: 150px;
-                    box-shadow: inset 0px 0px 15px #0230474b;
-                    object-fit: contain;
-                    border-radius: 25px;
-                    padding: 20px;
+                position: relative;
+                transition: box-shadow 350ms, transform 1050ms;
 
-                    position: relative;
-                    transition: box-shadow 350ms, transform 1050ms;
-
-                    &:hover {
-                        box-shadow: inset 0px 0px 0px #02304778;
-                        transform: scale(1.2);
-                    }
+                &:hover {
+                    box-shadow: inset 0px 0px 0px #02304778;
+                    transform: scale(1.2);
                 }
-
-
             }
+
+
         }
     }
+}
