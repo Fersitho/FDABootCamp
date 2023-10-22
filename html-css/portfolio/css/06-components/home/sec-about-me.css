@@ -63,9 +63,9 @@
     .yo-fondo {
         width: 100%;
         grid-column: 3/5;
-        background: url('../../../assets/img/yo-header.png');
+        background: url('../../../assets/fda.webp');
         background-size: cover;
-        background-position: center;
+        background-position: 50% 39%;
         border-radius: 0 0 0 4rem;
         position: relative;
         height: 100%;
