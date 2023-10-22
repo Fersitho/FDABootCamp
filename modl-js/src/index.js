@@ -157,9 +157,7 @@ for (let i = 0; i < maxInsert; i++) {
     let numberRandom = Math.round(Math.random() * 100);
 
     console.log(numberRandom);
-    numbersAleatorios.push(
-        numberRandom
-    )
+    numbersAleatorios.push(numberRandom)
 
 }
 
@@ -169,6 +167,31 @@ let masBajo = ordenados[0]
 
 let masAlto = ordenados[numbersAleatorios.length - 1]
 
-    console.log('ordenados', ordenados)
-    console.log('masBajo', masBajo)
-    console.log('masAlto', masAlto)
+console.log('ordenados', ordenados)
+console.log('masBajo', masBajo)
+console.log('masAlto', masAlto)
+// forma 2 del ejercicio
+function genNumAl() {
+    const numerosAleatorios = [];
+
+    for (let i = 0; i < 10; i++) {
+        const numeroAleatorio = Math.floor(Math.random() * 100);
+        numerosAleatorios.push(numeroAleatorio);
+    }
+
+    const numeroMenor = Math.min(...numerosAleatorios);
+    const numeroMayor = Math.max(...numerosAleatorios);
+
+    return {
+        numeros: numerosAleatorios,
+        menor: numeroMenor,
+        mayor: numeroMayor
+    };
+}
+
+const resultado = genNumAl();
+console.log("Números aleatorios:", resultado.numeros);
+console.log("El número menor es:", resultado.menor);
+console.log("El número mayor es:", resultado.mayor);
+
+// la función sort realiza una ordenación completa del array, lo que tiene una complejidad de O(n * log(n)), donde "n" es el número de elementos en el array. Esto puede ser un poco menos eficiente en términos de tiempo de ejecución en comparación con el uso de Math.min y Math.max, que tienen una complejidad de tiempo de O(n).
