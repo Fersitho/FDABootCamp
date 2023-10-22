@@ -2,11 +2,18 @@
 
 @import url('../css/01-settings/global.css');
 @import url('../css/01-settings/variables.css');
+
 @import url('../css/03-generic/reset.css');
 
 
 @import url('../css/04-elements/buttonRed.css');
 @import url('../css/04-elements/buttonOrg.css');
 
+@import url('../css/06-components/home/landing-main-header.css');
 
-@import url('../css/06-components/home/landing.css');
+@import url('../css/06-components/home/sec-about-me.css');
+@import url('../css/06-components/home/sec-experiencia.css');
+@import url('../css/06-components/home/sec-habilidades.css');
+@import url('../css/06-components/home/sec-portfolio.css');
+@import url('../css/06-components/home/sec-servicios.css');
+@import url('../css/06-components/home/sec-contacto.css');

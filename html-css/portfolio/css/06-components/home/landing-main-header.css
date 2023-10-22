@@ -1,0 +1,104 @@
+html {
+    font-size: 16px;
+    font-family: 'Barlow', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    justify-items: center;
+
+
+
+    .content-grid {
+        grid-column: 2/4;
+    }
+
+    &>header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--white-1-70);
+
+        & nav {
+            grid-column: 2/4;
+            padding: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        &>nav>ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            color: var(--black-1);
+            font-weight: 300;
+            font-size: 1.4rem;
+
+
+            & li:first-of-type {
+                & a {
+                    color: var(--org-1);
+                }
+            }
+
+            & li {
+                & a {
+                    transition: color 550ms;
+                    letter-spacing: 1px;
+                }
+
+                &:hover>a {
+                    color: var(--org-1);
+                }
+            }
+        }
+    }
+
+    .sec-grid {
+        grid-column: 1/1;
+        display: grid;
+        width: 100%;
+        max-width: 1350px;
+        grid-template-columns: 50px 1fr 1fr 50px;
+        grid-template-rows: auto;
+        justify-content: center;
+
+        .ts-to-left {
+            justify-content: flex-start;
+        }
+
+    }
+
+    .title-section-center {
+        grid-column: 2/4;
+        padding-block: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--azul-negro);
+        font-family: 'Open Sans', sans-serif;
+    }
+
+
+}
