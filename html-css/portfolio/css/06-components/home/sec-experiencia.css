@@ -1,6 +1,8 @@
 .sec-experiencia {
-    grid-template-columns: 50px 2fr 1fr 50px !important;
-
+    grid-template-columns: 50px 1fr 1.2fr 50px !important;
+    @media(width < 1220px) {
+        grid-template-columns: 50px 1fr 1.8fr 50px !important;
+    }
     &>.title-section-center {
         color: var(--org-1);
         padding-block-end: 0;
@@ -14,10 +16,12 @@
         align-items: center;
         width: 100%;
         min-height: 350px;
-        min-width: 620px;
+        min-width: 350px;
 
         margin-block-start: 150px;
         margin-block-end: 3rem;
+
+
 
         &>img {
             width: 100%;
@@ -34,18 +38,25 @@
             bottom: 0;
             top: 0;
             left: 0;
-            right: 0;
+
             margin: auto;
+
+            @media(width < 1220px) {
+                max-width: 320px;
+            }
         }
 
         &>img:nth-of-type(2) {
             max-width: 400px;
             bottom: 0;
-            top: -300px;
+            top: -250px;
             left: 82px;
-            right: 0;
             margin: auto;
             z-index: 2;
+
+            @media(width < 1220px) {
+                max-width: 250px;
+            }
         }
 
         &>img:nth-of-type(3) {
@@ -53,9 +64,14 @@
             z-index: 3;
             bottom: 0;
             top: -35px;
-            left: 420px;
-            right: 0;
+            left: 35%;
+
             margin: auto;
+
+            @media(width < 1220px) {
+                max-width: 220px;
+                left: 150px;
+            }
         }
     }
 
@@ -81,9 +97,9 @@
 
             &::before {
                 content: '';
-                width: 1.2rem;
-                height: 1.2rem;
-                border-radius: 1.2rem;
+                min-width: 1.2rem;
+                min-height: 1.2rem;
+                border-radius: 50%;
                 background-color: var(--org-1);
             }
 

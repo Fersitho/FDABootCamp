@@ -38,6 +38,8 @@
             margin-block: 0 1.5rem;
             position: relative;
 
+
+
             &>span {
                 color: #F38900;
                 font-weight: 700;
@@ -70,16 +72,21 @@
         position: relative;
         height: 100%;
 
-        &::before {
-            content: '';
-            width: 20%;
-            height: 100%;
-            background: linear-gradient(to left, white, transparent);
-            position: absolute;
-            z-index: 9;
-            right: 0;
-            top: 0;
+        @media(width > 1350px) {
+            &::before {
+                content: '';
+                width: 20%;
+                height: 100%;
+                background: linear-gradient(to left, white, transparent);
+                position: absolute;
+                z-index: 9;
+                right: 0;
+                top: 0;
+            }
+
         }
+
+
 
     }
 }

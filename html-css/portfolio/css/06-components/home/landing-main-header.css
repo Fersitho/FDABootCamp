@@ -85,6 +85,17 @@ main {
             justify-content: flex-start;
         }
 
+        @media(width < 1195px) {
+
+            grid-template-columns: 50px 1fr 1fr 50px;
+
+        }
+        @media(width < 855px) {
+
+            grid-template-columns: 50px 2fr 1fr 50px;
+
+        }
+
     }
 
     .title-section-center {
