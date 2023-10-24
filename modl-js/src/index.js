@@ -68,7 +68,8 @@ console.log('text2 =', text2)
 let text3 = 'Hi, I am learning Javascript'
 let vowels3 = 'aeiouAEIOU'
 
-for (let x = 0; x < text3.length; x++) {
+for (let x = 0; x < vowels3.length; x++) {
+
     let vowel = vowels3.charAt(x)
 
     if (text3.includes(vowel)) {
