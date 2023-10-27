@@ -44,7 +44,7 @@ main {
             }
         }
 
-        .rating {
+        .rating , .summary{
             &>h3 {
                 text-transform: uppercase;
                 font-weight: 800;
