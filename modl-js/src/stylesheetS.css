@@ -1,0 +1,19 @@
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        & .box {
+            background: red;
+            width: 250px;
+            height: 250px;
+        }
+    }
+}
