@@ -113,4 +113,4 @@ const createFilmsInfo = (movies) => {
 
 }
 
-createFilmsInfo(moviesA)
+createFilmsInfo(movies.filter(film => film.actors.includes('Brad Pitt')))
