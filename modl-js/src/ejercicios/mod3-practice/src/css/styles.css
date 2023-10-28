@@ -1,0 +1,29 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.topbar {
+    margin: 0;
+    padding: 1px 30px;
+    background-color: #f1c232;
+}
+
+.topbar h1 {
+    font-size: 1.5rem;
+}
+
+.exercise {
+    padding: 15px 30px 10px;
+} 
+
+.exercise .heading {
+    margin: 5px 0;
+}
+
+.toggle {
+    color: blue;
+    margin-bottom: 10px;    
+}
+.hidden {
+    display: none;
+}
