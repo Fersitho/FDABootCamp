@@ -24,7 +24,7 @@ main {
         padding-block-end: 1rem;
         background-color: #4b4b4b9c;
         border-radius: 25px;
-        text-wrap: balance;
+        text-wrap: pretty;
 
         &>img {
             aspect-ratio: 2/3;
