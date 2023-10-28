@@ -1,5 +1,5 @@
 
-const movies = [{
+const moviesA = [{
     title: "The Dark Knight",
     director: "Christopher Nolan",
     actors: "Christian Bale, Heath Ledger, Aaron Eckhart",
@@ -76,7 +76,7 @@ const genArticleDirector = (film) => {
 const genArticleActors = (film) => {
     const articleActors = document.createElement('article')
     let p = document.createElement('p')
-    p.innerHTML = `<strong> Actors </strong>: ${film.actors}`
+    p.innerHTML = `<strong> Actors</strong>: ${film.actors}`
     articleActors.appendChild(p)
 
     return articleActors
@@ -86,16 +86,12 @@ const genArticleActors = (film) => {
 const genArticleCategory = (film) => {
     const articleCategory = document.createElement('article')
     let p = document.createElement('p')
-    p.innerHTML = `<strong> Category </strong>: ${film.category}`
+    p.innerHTML = `<strong> Category</strong>: ${film.category}`
     articleCategory.appendChild(p)
 
     return articleCategory
 
 }
-
-
-
-
 
 const createFilmsInfo = (movies) => {
 
@@ -117,5 +113,4 @@ const createFilmsInfo = (movies) => {
 
 }
 
-
-createFilmsInfo(movies)
+createFilmsInfo(moviesA)
