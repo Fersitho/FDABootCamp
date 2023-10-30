@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +26,7 @@ main {
 
         gap: 1rem;
         box-shadow: 0 0 25px grey;
+        padding-block-end: 1rem;
         background-color: #4b4b4b9c;
         border-radius: 25px;
         text-wrap: pretty;
@@ -34,9 +35,8 @@ main {
 
         &>img {
             aspect-ratio: 2/3;
-            border-radius: 25px 25px 25px 25px;
+            border-radius: 25px 25px 0px 0px;
             width: 100%;
-            cursor: pointer;
         }
 
         &>i {
@@ -45,18 +45,17 @@ main {
             font-size: 1.5rem;
             cursor: pointer;
             transition: color 550ms;
-            margin-block-start: 1rem;
+
             &:hover {
                 color: rgb(133, 89, 9);
             }
         }
-        
+
         .container-info-film {
-            /* display: flex; */
-            display: none;
+            display: flex;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: flex-start;
             width: 100%;
 
 
@@ -81,13 +80,7 @@ main {
                 }
 
             }
-            &>:nth-last-child(1) {
-                
-                &>p {
-                    margin-block-end: 2rem;
-                }
 
-            }
             .rating {
                 width: 100%;
             }
@@ -106,12 +99,13 @@ main {
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     width: calc(100% - 1.6rem);
+                    cursor: pointer;
                     transition: height 550ms;
                     margin-block-start: 0.5rem;
 
-                    /* &:hover {
+                    &:hover {
                         white-space: wrap;
-                    } */
+                    }
                 }
             }
 
@@ -125,14 +119,6 @@ main {
                 min-height: 3lh;
 
             }
-        }
-
-        .show{
-            display: flex;
-        }
-
-        .noShow{
-            display: none;
         }
 
     }

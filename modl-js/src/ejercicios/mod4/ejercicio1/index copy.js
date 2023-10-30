@@ -37,42 +37,21 @@ function eventHiddenDescription(e) {
 }
 
 function eventHiddenData(event) {
-    // console.log(event)
+    console.log(event)
     if (event.target.tagName == 'I') {
         let miElement = event.target
-        let img = miElement.previousElementSibling
-        
-
-        let container = miElement.nextElementSibling
+        let stateView = miElement.nextElementSibling.style.display
         // .parentNode nos da el padre!
         // event.srcElement nos da el elemento principal clcado donde se producio el evento
-        if (img.classList.contains('noShow')) {
-            img.className = ''
-            container.className = 'container-info-film'
-            miElement.className = 'fa-regular fa-eye noShow'
-        }
-    } 
+        if (stateView == 'none') {
+            miElement.nextElementSibling.style.display = 'flex'
+            miElement.className = 'fa-sharp fa-regular fa-eye-slash'
+        } else {
+            miElement.nextElementSibling.style.display = 'none'
+            miElement.className = 'fa-regular fa-eye'
 
-    if (event.target.tagName == 'IMG') {
-       
-        let miElement = event.target.nextElementSibling.nextElementSibling
-      
-       
-        let icons = event.target.nextElementSibling
-        
-        let altoImg = event.target.offsetHeight - 50
-        console.log(altoImg)
-
-       
-        // .parentNode nos da el padre!
-        // event.srcElement nos da el elemento principal clcado donde se producio el evento
-        if (!miElement.classList.contains( 'show')) {
-            miElement.className += ' show'
-            event.target.className = 'noShow'
-            icons.className = 'fa-regular fa-rotate-left'
         }
     }
-
 
 
     // let elementos = document.querySelectorAll('section > div > article')
@@ -100,6 +79,8 @@ function eventHiddenData(event) {
 
 const genSectionFilm = () => {
     let a = document.createElement('section')
+    // a.addEventListener('click', eventHiddenData);
+    // a.addEventListener('click', eventHiddenDescription);
     return a
 
 }
@@ -114,7 +95,8 @@ const genImgFilm = (film) => {
 }
 const genIconView = () => {
     let icon = document.createElement('i')
-    icon.className = 'fa-regular fa-eye noShow'
+    icon.className = 'fa-sharp fa-regular fa-eye-slash'
+    // icon.addEventListener('click', eventHiddenData);
 
     return icon
 }
@@ -140,6 +122,11 @@ const genArticleSummary = (film) => {
 
     let h3 = document.createElement('h3')
     h3.textContent = 'Summary'
+
+
+    // h3.addEventListener('click', eventHiddenDescription);
+
+
 
     articleSummary.appendChild(h3)
 
@@ -191,7 +178,6 @@ const createFilmsInfo = (movies) => {
 
         let divInfo = document.createElement('div');
         divInfo.className = 'container-info-film'
-        // divInfo.appendChild(genIconView())
         divInfo.appendChild(genArticleRating(film))
         divInfo.appendChild(genArticleSummary(film))
 
@@ -202,16 +188,14 @@ const createFilmsInfo = (movies) => {
         sectionFilms.appendChild(divInfo)
 
         document.querySelector('body>main').addEventListener('click', eventHiddenData);
-        // document.querySelector('body>main').addEventListener('click', eventHiddenDescription);
-
+        document.querySelector('body>main').addEventListener('click', eventHiddenDescription);
+        
         document.querySelector('body>main').appendChild(sectionFilms)
 
     }
 
 }
-console.log(movies)
+
 createFilmsInfo(
-    // movies.filter(film => film.title.includes('F')).sort((a, b) => b.year - a.year)
     movies.filter(film => film.actors.includes('Brad Pitt')).sort((a, b) => b.year - a.year)
-    // movies.sort((a, b) => b.year - a.year)
-    )
+)
