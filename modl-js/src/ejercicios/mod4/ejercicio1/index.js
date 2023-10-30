@@ -23,33 +23,40 @@ const moviesA = [{
 }]
 
 
-function eventHiddenDescription() {
-    
-    let elementos = document.querySelectorAll('.summary p')
-
-    for (let i = 0; i < elementos.length; i++) {
-        elementos[i].style.display = elementos[i].style.display == 'none' ? '-webkit-box' : 'none'
+function eventHiddenDescription(e) {
+    if (e.target.tagName == 'H3') {
+        let miElementFocus = e.target.nextElementSibling
+        miElementFocus.style.display = miElementFocus.style.display == 'none' ? '-webkit-box' : 'none'
     }
+    // let elementos = document.querySelectorAll('.summary p')
+
+    // for (let i = 0; i < elementos.length; i++) {
+    //     elementos[i].style.display = elementos[i].style.display == 'none' ? '-webkit-box' : 'none'
+    // }
 
 }
 
 function eventHiddenData(event) {
+    console.log(event)
+    if (event.target.tagName == 'I') {
+        let miElement = event.target
+        let stateView = miElement.nextElementSibling.style.display
+        // .parentNode nos da el padre!
+        // event.srcElement nos da el elemento principal clcado donde se producio el evento
+        if (stateView == 'none') {
+            miElement.nextElementSibling.style.display = 'flex'
+            miElement.className = 'fa-sharp fa-regular fa-eye-slash'
+        } else {
+            miElement.nextElementSibling.style.display = 'none'
+            miElement.className = 'fa-regular fa-eye'
 
-    let miElement = event.target
-    let stateView = miElement.nextElementSibling.style.display
- // .parentNode nos da el padre!
-    if(stateView == 'none'){
-        miElement.nextElementSibling.style.display = 'flex'
-        miElement.className = 'fa-sharp fa-regular fa-eye-slash'
-    } else {
-        miElement.nextElementSibling.style.display = 'none'
-        miElement.className = 'fa-regular fa-eye'
-        
+        }
     }
-    
+
+
     // let elementos = document.querySelectorAll('section > div > article')
     // let icons = document.querySelectorAll('section > i')
-    
+
     // for (let i = 0; i < elementos.length; i++) {
 
     //     elementos[i].toggleAttribute('hidden')
@@ -70,7 +77,13 @@ function eventHiddenData(event) {
 
 }
 
-const genSectionFilm = () => document.createElement('section')
+const genSectionFilm = () => {
+    let a = document.createElement('section')
+    // a.addEventListener('click', eventHiddenData);
+    // a.addEventListener('click', eventHiddenDescription);
+    return a
+
+}
 
 const genImgFilm = (film) => {
 
@@ -83,7 +96,7 @@ const genImgFilm = (film) => {
 const genIconView = () => {
     let icon = document.createElement('i')
     icon.className = 'fa-sharp fa-regular fa-eye-slash'
-    icon.addEventListener('click', eventHiddenData);
+    // icon.addEventListener('click', eventHiddenData);
 
     return icon
 }
@@ -111,7 +124,7 @@ const genArticleSummary = (film) => {
     h3.textContent = 'Summary'
 
 
-    h3.addEventListener('click', eventHiddenDescription);
+    // h3.addEventListener('click', eventHiddenDescription);
 
 
 
@@ -173,8 +186,10 @@ const createFilmsInfo = (movies) => {
         divInfo.appendChild(genArticleActors(film))
         divInfo.appendChild(genArticleCategory(film))
         sectionFilms.appendChild(divInfo)
-        
 
+        document.querySelector('body>main').addEventListener('click', eventHiddenData);
+        document.querySelector('body>main').addEventListener('click', eventHiddenDescription);
+        
         document.querySelector('body>main').appendChild(sectionFilms)
 
     }
@@ -182,5 +197,5 @@ const createFilmsInfo = (movies) => {
 }
 
 createFilmsInfo(
-    movies.filter(film => film.actors.includes('Brad Pitt')).sort((a,b) => b.year - a.year)
+    movies.filter(film => film.actors.includes('Brad Pitt')).sort((a, b) => b.year - a.year)
 )
