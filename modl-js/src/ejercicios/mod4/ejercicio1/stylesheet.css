@@ -26,57 +26,84 @@ main {
         border-radius: 25px;
         text-wrap: pretty;
 
+
+
         &>img {
             aspect-ratio: 2/3;
             border-radius: 25px 25px 0px 0px;
             width: 100%;
         }
 
-        &>article {
-            padding-inline: 1rem;
+        &>i {
+            align-self: center;
+            color: orange;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 550ms;
 
-            &>h3 {
-                margin: 0;
-            }
-
-            &>p {
-                margin: 0;
-                margin-top: 0.2rem;
-                font-size: 0.8rem;
+            &:hover {
+                color: rgb(133, 89, 9);
             }
         }
 
-        .rating{
+        .container-info-film {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
             width: 100%;
-        }
-        .rating,
-        .summary {
-            &>h3 {
-                text-transform: uppercase;
-                font-weight: 700;
-                font-size: 1rem;
-                letter-spacing: 0.3px;
-                overflow:  hidden;
-                text-overflow: ellipsis;
-                text-wrap: nowrap;
-                width: calc(100% - 1.6rem);
 
-                transition: height 550ms;
-                &:hover{
-                    text-wrap: wrap;
+            &>article {
+                padding-inline: 1rem;
+
+                &>h3 {
+                    margin: 0;
+                }
+
+                &>p {
+                    margin: 0;
+                    margin-top: 0.2rem;
+                    font-size: 0.8rem;
                 }
             }
+
+            .rating {
+                width: 100%;
+            }
+
+            .rating,
+            .summary {
+                width: calc(100% - 2rem);
+
+                &>h3 {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    letter-spacing: 0.3px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: calc(100% - 1.6rem);
+                    cursor: pointer;
+                    transition: height 550ms;
+
+                    &:hover {
+                        white-space: wrap;
+                    }
+                }
+            }
+
+            .summary>p {
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1rem;
+                min-height: 5lh;
+
+            }
         }
 
-        .summary>p {
-            display: -webkit-box;
-            -webkit-line-clamp: 5;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 1rem;
-            min-height: 5lh;
-
-        }
     }
 }
