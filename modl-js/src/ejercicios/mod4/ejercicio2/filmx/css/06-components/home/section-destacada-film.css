@@ -1,0 +1,174 @@
+.section-destacada-film {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    background-color: var(--white-1);
+    color: var(--white-1);
+    width: 100%;
+    padding-block-start: 80px;
+}
+
+.container-samurai {
+    background-color: var(--white-1);
+    color: var(--black-2);
+    padding-block: 75px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    background-image: url(../../../assets/img/bg_samurai1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: left;
+    background-position-y: bottom;
+
+}
+
+.container-samurai-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    max-width: 600px;
+    padding: 25px;
+    padding-inline-end: 100px;
+
+    border-radius: 15px;
+    background: #ffffffc9;
+}
+
+.container-samurai::before {
+    content: '';
+    width: 50%;
+    height: 50px;
+    min-width: 416px;
+}
+
+.container-samurai-info::before {
+    content: '';
+    width: 45px;
+    height: 1px;
+    background-color: var(--red-1);
+    position: relative;
+    top: -25px;
+}
+
+.container-samurai-info p{
+    color: #737373;
+    font-size: 0.8rem;
+}
+.container-samurai-info h3 {
+    padding-block-start: 0;
+    padding-block-end: 20px;
+    font-size: 37px;
+}
+
+.container-samurai-info h6 {
+    padding-block-start: 10px;
+    padding-block-end: 25px;
+
+    color: #737373;
+    font-size: 13px;
+
+
+}
+
+.container-samurai-info h3,
+.container-samurai-info h6,
+.container-samurai-info nav ul li a {
+    text-transform: uppercase;
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 1px;
+}
+
+
+
+.container-samurai-info-span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.container-samurai-info-span h6{
+    color: var(--black-2);
+    letter-spacing: 0.2px;
+}
+
+
+.container-samurai-info nav ul {
+    padding: 35px 0px;
+    display: flex;
+    
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container-samurai-info nav ul li a{
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    transition: color 750ms;
+}
+
+.container-samurai-info nav ul li:first-child{
+    color: var(--red-1);
+    
+}
+
+.container-samurai-info nav ul li:first-child::before{
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    content: "\f061";
+    color: var(--red-1);
+    font-size: 13px;
+    margin-inline-end: 5px;
+    transition: color 750ms;
+    cursor: pointer;
+    
+}
+
+.container-samurai-info nav ul li:hover:first-child, .container-samurai-info nav ul li:hover:first-child::before{
+    color: #8d0515;
+}
+
+.container-samurai-info nav ul li:last-child::before{
+    font-family: "Font Awesome 6 Pro";
+    content: "\f144";
+    font-size: 13px;
+    margin-inline-end: 5px;
+    transition: color 750ms;
+    cursor: pointer;
+}
+
+.container-samurai-info nav ul li:last-child:hover, .container-samurai-info nav ul li:hover:last-child::before{
+    color: var(--red-1);
+}
+
+@media (max-width: 900px) {
+    .container-samurai::before {
+        min-width: unset;
+        width: 0;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .section-destacada-film {
+        padding-block-start: 0;
+    }
+
+    
+}
+
+@media (max-width: 490px) {
+
+    .container-samurai-info {
+        padding-inline-end: 40px;
+    }
+
+    
+}

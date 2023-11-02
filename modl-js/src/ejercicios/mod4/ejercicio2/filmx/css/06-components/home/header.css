@@ -1,0 +1,114 @@
+.header {
+    grid-column: 1;
+    background-color: var(--black-2);
+    color: var(--white-1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    .nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        block-size: 65px;
+        padding: 0 15px;
+
+        & nav {
+
+            .nav-header-ul {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                & li {
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 15px 2px;
+                    border-bottom: 1px solid transparent;
+
+
+                    transition: border-bottom 750ms;
+
+                    & a {
+
+                        font-family: "Roboto Condensed", sans-serif;
+                        font-weight: 700;
+                        font-size: 14px;
+                        letter-spacing: .75px;
+                        text-transform: uppercase;
+                        transform: scaleY(0.85);
+
+
+                    }
+
+                    &:hover {
+
+                        border-bottom: 1px solid var(--red-1);
+                    }
+                }
+            }
+
+            & span {
+                color: var(--black-1);
+                padding-inline: 20px;
+            }
+
+
+        }
+
+        .busqueda-redes {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+
+            & svg {
+                fill: var(--white-1);
+                width: 18px;
+            }
+
+            & nav {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                & ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+
+                }
+            }
+
+            & span {
+                color: var(--gris-2);
+                padding: 0px 25px;
+                font-size: 25px;
+                font-weight: 300;
+            }
+
+            & search {
+                & button {
+                    display: flex;
+                    background-color: transparent;
+                    border: 0;
+                }
+
+            }
+
+        }
+    }
+
+}

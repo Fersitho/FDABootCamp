@@ -1,5 +1,5 @@
 
-const moviesA = {
+const moviesA = [{
     title: "The Dark Knight",
     director: "Christopher Nolan",
     actors: "Christian Bale, Heath Ledger, Aaron Eckhart",
@@ -9,7 +9,18 @@ const moviesA = {
     rating: 9,
     description:
         "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-}
+},
+{
+    title: "The Dark Knight",
+    director: "Christopher Nolan",
+    actors: "Christian Bale, Heath Ledger, Aaron Eckhart",
+    year: 2008,
+    category: "Action",
+    poster: "http://image.tmdb.org/t/p/w500//qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    rating: 9,
+    description:
+        "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+}]
 
 
 function eventHiddenDescription(e) {
@@ -174,6 +185,7 @@ const createFilmsInfo = (movies) => {
 
     for (let i = 0; i < movies.length; i++) {
         let film = movies[i]
+
         const sectionFilms = genSectionFilm()
         sectionFilms.appendChild(genImgFilm(film))
         sectionFilms.appendChild(genIconView())
@@ -190,17 +202,15 @@ const createFilmsInfo = (movies) => {
         divInfo.appendChild(genArticleCategory(film))
         sectionFilms.appendChild(divInfo)
 
-        document.querySelector('body>main').addEventListener('click', eventHiddenData);
+        document.querySelector('#browser').addEventListener('click', eventHiddenData);
         // document.querySelector('body>main').addEventListener('click', eventHiddenDescription);
 
-        document.querySelector('body>main').appendChild(sectionFilms)
-
+        document.querySelector('#browser').appendChild(sectionFilms)
+        
     }
 
 }
-
 console.log(movies)
-
 createFilmsInfo(
     // movies.filter(film => film.title.includes('F')).sort((a, b) => b.year - a.year)
     movies.filter(film => film.actors.includes('Brad Pitt')).sort((a, b) => b.year - a.year)

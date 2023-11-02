@@ -1,0 +1,117 @@
+.actores-info-film {
+    grid-column: 2/3;
+    height: fit-content;
+
+    &>h3 {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 2rem 1rem;
+        color: var(--black-2);
+    }
+
+    .slide-snap-scroll {
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: flex;
+        gap: 15px;
+        position: relative;
+
+        /* Firefox */
+        & {
+            scrollbar-width: thin;
+            scrollbar-color: var(--black-2);
+            cursor: pointer;
+        }
+
+        /* Chrome, Edge, and Safari */
+        &::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+            cursor: pointer;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--gris-3);
+            border-radius: 20px;
+            margin-bottom: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--red-3);
+            border-radius: 20px;
+            border: 2px solid var(--gris-1);
+
+        }
+
+        &>figure {
+            scroll-snap-align: center;
+            max-width: 120px;
+            min-width: 120px;
+            height: 250px;
+            margin: 0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+
+            transition: min-width 750ms, box-shadow 750ms;
+
+            &>img {
+                width: 100%;
+                height: auto;
+                max-height: 270px;
+                max-width: 120px;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 1200px 20px var(--black-2);
+                min-width: 180px;
+
+                &>p:nth-of-type(1) {
+
+                    color: var(--red-2);
+                    max-width: unset;
+
+                    padding: 0px 0px;
+                    z-index: 1;
+                }
+
+                &>p:nth-of-type(2) {
+                    text-overflow: unset;
+                    overflow: unset;
+                    max-width: unset;
+                    padding: 0px 10px;
+                    z-index: 1;
+                }
+
+            }
+
+            &>p {
+                max-width: 100%;
+                white-space: nowrap;
+
+                font-size: 0.95rem;
+                font-family: 'Roboto Condenses', sans-serif;
+                font-weight: 600;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: color 750ms;
+            }
+
+            &>p:nth-of-type(1) {
+                color: var(--gris-5);
+                font-weight: 500;
+            }
+
+            &>p:nth-of-type(2) {
+                color: var(--black-1);
+            }
+        }
+    }
+
+}

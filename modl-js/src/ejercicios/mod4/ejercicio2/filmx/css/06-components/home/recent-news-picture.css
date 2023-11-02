@@ -1,0 +1,258 @@
+.newsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+
+}
+
+.news {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    background-color: var(--black-2);
+    color: var(--white-1);
+    width: 100%;
+    padding-block-end: 200px;
+    padding-block-start: 20px;
+}
+
+.container-news {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    padding: 0 15px;
+    gap: 30px;
+}
+
+.banner-news {
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+
+}
+
+.card-foto-news {
+    background-color: var(--black-2);
+    padding: 30px;
+    padding-block-end: 5px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 500px;
+    z-index: 8;
+}
+
+.card-foto-news h3 {
+    margin: 0;
+    font-size: 37px;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.card-foto-news p {
+    color: var(--gris-2);
+    font-size: 14px;
+    margin: 25px 0;
+    font-family: "Roboto", sans-serif;
+}
+.card-foto-news a {
+    font-size: 13px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: color 750ms;
+}
+.card-foto-news a::after {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    content: "\f061";
+    margin-inline-start: 12px;
+    color: var(--red-1);
+}
+.card-foto-news a:hover {
+    color: var(--red-1);
+}
+
+.foto-news {
+    background-image: url('../../../assets/img/MicrosoftTeams-image\ \(21\).png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+
+}
+
+.aside-news {
+    width: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+
+    transition: width 750ms;
+}
+
+
+
+.aside-news h2 {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: "Roboto Condensed", sans-serif;
+    line-height: 1.15em;
+    font-weight: 700;
+    font-style: normal;
+    transform: scaleY(0.90);
+}
+
+.aside-news h2::after {
+    display: inline-block;
+    content: '';
+    height: 1px;
+    width: 28px;
+    background: var(--red-1);
+    vertical-align: super;
+    margin-left: 15px;
+}
+
+
+.aside-news-bog {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 50%;
+    gap: 25px;
+}
+
+.aside-news .aside-news-bog article {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.aside-news .aside-news-bog article div h3 {
+    margin: 0;
+    font-size: 16px;
+    text-wrap: balance;
+    letter-spacing: 0.75px;
+    transition: color 750ms;
+    cursor: pointer;
+    
+}
+.aside-news .aside-news-bog article div h3 a {
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.aside-news .aside-news-bog article div h3:hover {
+    color: var(--gris-2);
+}
+
+.aside-news .aside-news-bog article div time {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--gris-2);
+    letter-spacing: 1px;
+    transition: color 750ms;
+    cursor: pointer;
+}
+
+.aside-news .aside-news-bog article div time:hover {
+    color: var(--white-1);
+    
+}
+
+.aside-news .aside-news-bog article div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    
+}
+
+.aside-news .aside-news-bog article img {
+    object-fit: cover;
+    max-height: 88px;
+    cursor: pointer;
+}
+
+@media (max-width: 968px) {
+    .aside-news {
+        width: 60%;
+    }
+
+    .foto-news {
+        background-position: top;
+    }
+}
+
+@media (max-width: 653px) {
+    .aside-news {
+        width: 100%;
+    }
+
+    .banner-news {
+        width: 30%;
+    }
+
+    .card-foto-news {
+        bottom: 0px;
+        max-width: unset;
+    }
+
+    .banner-news::after {
+        content: '';
+        background-image: url('../../../assets/img/MicrosoftTeams-image\ \(21\).png');
+        background-size: cover;
+        background-position: center;
+        width: 125px;
+        height: 125px;
+        border-radius: 125px;
+        z-index: 8;
+        position: absolute;
+        bottom: -20px;
+        right: 10px;
+    }
+
+    .foto-news {
+        background-position: top;
+    }
+
+    .banner-news {
+        width: 0%;
+    }
+
+    .news {
+        padding-block-end: 220px;
+    }
+}
+
+@media (max-width: 493px) {
+    .banner-news::after {
+
+        width: 85px;
+        height: 85px;
+        bottom: 166px;
+        right: 10px;
+    }
+
+    .card-foto-news {
+        padding: 10px;
+    }
+    
+}
