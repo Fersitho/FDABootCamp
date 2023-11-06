@@ -1,0 +1,13 @@
+main {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-block-size: 90vh;
+    inline-size: 100%;
+
+    
+
+}
