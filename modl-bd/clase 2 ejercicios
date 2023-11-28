@@ -1,6 +1,7 @@
 CREATE database ejercicio1_resuelto
 --y metemos todo esto:
 
+-- Crear primero las tablas 1 a 1
 CREATE TABLE Users (     
 user_id MEDIUMINT AUTO_INCREMENT,    
  name VARCHAR(50) NOT NULL,     
@@ -17,7 +18,7 @@ password VARCHAR(20) NOT NULL,
  PRIMARY KEY(login_id),     
 FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE );
 
-
+-- Ahora podemos meter todos los insert de una vez:
 
 INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('John', 'Doe', '123457890', '1980-05-15');
 
