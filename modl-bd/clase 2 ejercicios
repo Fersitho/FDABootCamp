@@ -1,0 +1,93 @@
+CREATE database ejercicio1_resuelto
+--y metemos todo esto:
+
+CREATE TABLE Users (     
+user_id MEDIUMINT AUTO_INCREMENT,    
+ name VARCHAR(50) NOT NULL,     
+last_name VARCHAR(50) NOT NULL,     
+phone VARCHAR(12),     
+birth_date VARCHAR(20),    
+primary key(user_id) );
+
+CREATE TABLE Login (     
+login_id MEDIUMINT NOT NULL AUTO_INCREMENT,     
+user_id MEDIUMINT NOT NULL,     
+email VARCHAR(30) NOT NULL,     
+password VARCHAR(20) NOT NULL,    
+ PRIMARY KEY(login_id),     
+FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE );
+
+
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('John', 'Doe', '123457890', '1980-05-15');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Jane', 'Smith', '9876543210', '1992-12-10');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Michael', 'Johnson', '5555555555', '1975-08-20');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Emma', 'Brown', '5555555555', '1990-04-22');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Daniel', 'Taylor', '1111111111', '1988-11-05');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Olivia', 'Lee', '123457890', '1985-09-28');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('William', 'Wilson', '9876543210', '1993-07-12');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Sophia', 'Anderson', '55555555', '1979-03-17');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Matthew', 'Davis', '5555555', '1996-02-02');
+
+INSERT INTO Users (name, last_name, phone, birth_date) VALUES ('Isabella', 'Clark', '11111111', '1991-10-09');
+ 
+ 
+INSERT INTO Login (user_id, email, password) VALUES (1, 'john.doe@example.com', 'password1');
+
+INSERT INTO Login (user_id, email, password) VALUES (2, 'jane.smith@example.com', 'password2');
+
+INSERT INTO Login (user_id, email, password) VALUES (3, 'michael.johnson@example.com', 'password3');
+
+INSERT INTO Login (user_id, email, password) VALUES (4, 'emma.brown@example.com', 'password4');
+
+INSERT INTO Login (user_id, email, password) VALUES (5, 'daniel.taylor@example.com', 'password5');
+
+INSERT INTO Login (user_id, email, password) VALUES (6, 'olivia.lee@example.com', 'password6');
+
+INSERT INTO Login (user_id, email, password) VALUES (7, 'william.wilson@example.com', 'password7');
+
+INSERT INTO Login (user_id, email, password) VALUES (8, 'sophia.anderson@example.com', 'password8');
+
+INSERT INTO Login (user_id, email, password) VALUES (9, 'matthew.davis@example.com', 'password9');
+
+INSERT INTO Login (user_id, email, password) VALUES (10, 'isabella.clark@example.com', 'password10');
+ 
+
+SELECT * FROM Users;
+SELECT * FROM Login;
+
+
+--1 Obtener con un alias el total de usuarios registrados en la base de datos.
+SELECT COUNT(*) FROM Users;
+
+--2 Encuentra los usuarios que tienen una fecha de nacimiento en un año específico
+SELECT * FROM Users WHERE  year(birth_date) = 1975;
+SELECT * FROM Users WHERE  year(birth_date) >= 1975;
+
+--3 En la tabla 'users', actualiza el campo 'telefono' para permitir valores nulos (NULL). A continuación, actualiza los usuarios con ID 2 y 3 para establecer su campo 'telefono' como nulo (NULL).
+ALTER TABLE Users MODIFY COLUMN phone VARCHAR(12) NULL;
+UPDATE Users SET phone = NULL WHERE user_id = 2 OR user_id = 3;
+
+--4 Otener todos los usuarios que tengan el valor teléfono nulo
+SELECT * FROM Users WHERE phone IS NULL;
+
+--5 Obtener los usuarios cuyo apellido empieza con la letra 'S';
+SELECT * FROM Users WHERE last_name LIKE 'S%';
+
+--6 Obtener los usuarios ordenados por fecha de nacimiento, de mayor a menor;
+-- Para menor a mayor ASC
+SELECT * FROM Users ORDER BY birth_date DESC;
+
+-- 7¿Cuántos usuarios tienen nombres que empiezan por la letra 'J'?
+SELECT * FROM Users WHERE name LIKE 'J%';
+
+-- 8 ¿Cuántos usuarios tienen un apellido que contiene la letra 'o'?
+SELECT COUNT(*) AS total_users FROM Users WHERE name LIKE '%o%';
