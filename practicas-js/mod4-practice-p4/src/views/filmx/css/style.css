@@ -1,0 +1,31 @@
+/* Import CSS all page */
+
+@import url('../css/01-settings/global.css');
+@import url('../css/01-settings/variables.css');
+@import url('../css/03-generic/reset.css');
+
+@import url('../css/04-elements/buttonRed.css');
+@import url('../css/04-elements/input-border-bottom.css');
+
+
+@import url('../css/05-objects/searchFilms.css');
+
+
+@import url('../css/06-components/home/header.css');
+@import url('../css/06-components/home/recent-news-picture.css');
+@import url('../css/06-components/home/slider-films.css');
+@import url('../css/06-components/home/section-destacada-film.css');
+@import url('../css/06-components/home/film-section.css');
+@import url('../css/06-components/home/section-val.css');
+@import url('../css/06-components/home/lastest-news.css');
+@import url('../css/06-components/home/footer.css');
+
+@import url('../css/06-components/infoFilm/index.css');
+@import url('../css/06-components/infoFilm/trailer-info-film.css');
+@import url('../css/06-components/infoFilm/aside-nav-info.css');
+@import url('../css/06-components/infoFilm/actores-info-film.css');
+@import url('../css/06-components/infoFilm/add-comment-info-film.css');
+
+
+@import url('../css/06-components/pageMovies/index.css');
+

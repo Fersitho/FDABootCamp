@@ -1,0 +1,12 @@
+.movies-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-block: 5rem;
+    padding-block-end: 9rem;
+    &>h1{
+        text-transform: uppercase;
+        color: var(--black-3);
+    }
+}
