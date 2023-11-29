@@ -79,10 +79,10 @@ INNER JOIN Courses c ON c.course_id = e.course_id
 GROUP BY s.first_name
 
 -- como lo hacia antes del bootcamp, metia los ON dentro del WHERE y la llamada a la tabla a unir en el FROM
-SELECT s.first_name, SUM(c.price) as totalPagado 
-FROM Students s, Enrollments e, Courses c
-WHERE e.student_id = s.student_id AND c.course_id = e.course_id 
-GROUP BY s.first_name
+-- SELECT s.first_name, SUM(c.price) as totalPagado 
+-- FROM Students s, Enrollments e, Courses c
+-- WHERE e.student_id = s.student_id AND c.course_id = e.course_id 
+-- GROUP BY s.first_name
 
 -- INNER JOIN Enrollments e ON e.student_id = s.student_id
 -- INNER JOIN Courses c ON c.course_id = e.course_id
