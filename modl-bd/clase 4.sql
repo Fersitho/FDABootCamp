@@ -51,6 +51,12 @@ ORDER BY course_count DESC;
 SELECT c.schedule, ROUND(AVG(c.price)) FROM Courses c GROUP BY c.schedule
 
 --Obtén el curso más antiguo
+SELECT c.course_name, e.year_enrolled
+FROM Courses c
+INNER JOIN Enrollments e ON c.course_id = e.course_id
+ORDER BY e.year_enrolled ASC
+LIMIT 1;
+
 (
 SELECT e.course_id, e.year_enrolled
 FROM Enrollments e
