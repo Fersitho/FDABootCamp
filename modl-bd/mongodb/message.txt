@@ -1,0 +1,553 @@
+db.restaurantes.insertMany(
+[
+	{
+		"_id": "64878fab37f8cf39b6b09890",
+		"nombre": "Restaurante Italiano Bella Vita",
+		"direccion": {
+			"calle": "Calle Italia 1231231231312313131313131313131",
+			"ciudad": "Ciudad A",
+			"provincia": "Provincia A",
+			"codigoPostal": "12345"
+		},
+		"tipo": "Italiano",
+		"puntuacion": 4.5,
+		"platos": [
+			"Pizza Margherita",
+			"Pasta Carbonara",
+			"Tiramisú"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09891",
+		"nombre": "Steakhouse Grill",
+		"direccion": {
+			"calle": "Avenida del Bife 456",
+			"ciudad": "Ciudad B",
+			"provincia": "Provincia B",
+			"codigoPostal": "23456"
+		},
+		"tipo": "Asador",
+		"puntuacion": 4.2,
+		"platos": [
+			"Bife de Tira",
+			"Chorizo Asado",
+			"Entraña"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09892",
+		"nombre": "Sushi Fusion",
+		"direccion": {
+			"calle": "Calle Sushi 789",
+			"ciudad": "Ciudad C",
+			"provincia": "Provincia C",
+			"codigoPostal": "34567"
+		},
+		"tipo": "Japonés",
+		"puntuacion": 4.8,
+		"platos": [
+			"Sashimi",
+			"Rolls Especiales",
+			"Nigiri"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:30 PM - 11:30 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09893",
+		"nombre": "Café Paris",
+		"direccion": {
+			"calle": "Avenida Francia 012",
+			"ciudad": "Ciudad D",
+			"provincia": "Provincia D",
+			"codigoPostal": "45678"
+		},
+		"tipo": "Cafetería",
+		"puntuacion": 4,
+		"platos": [
+			"Croissant",
+			"Café au Lait",
+			"Tarta de Manzana"
+		],
+		"horario": {
+			"lunesAViernes": "8:00 AM - 8:00 PM",
+			"sabado": "9:00 AM - 6:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09894",
+		"nombre": "Parrilla Argentina",
+		"direccion": {
+			"calle": "Avenida del Asado 345",
+			"ciudad": "Ciudad E",
+			"provincia": "Provincia E",
+			"codigoPostal": "56789"
+		},
+		"tipo": "Asador",
+		"puntuacion": 4.6,
+		"platos": [
+			"Asado",
+			"Matambre",
+			"Choripán"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09895",
+		"nombre": "Thai Spice",
+		"direccion": {
+			"calle": "Calle del Sabor 890",
+			"ciudad": "Ciudad F",
+			"provincia": "Provincia F",
+			"codigoPostal": "67890"
+		},
+		"tipo": "Tailandés",
+		"puntuacion": 4.4,
+		"platos": [
+			"Pad Thai",
+			"Curry Verde",
+			"Mango Sticky Rice"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09896",
+		"nombre": "La Pizzería",
+		"direccion": {
+			"calle": "Avenida de la Pizza 567",
+			"ciudad": "Ciudad G",
+			"provincia": "Provincia G",
+			"codigoPostal": "78901"
+		},
+		"tipo": "Pizzería",
+		"puntuacion": 4.7,
+		"platos": [
+			"Pizza Margherita",
+			"Pizza Hawaiana",
+			"Pizza Cuatro Quesos"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09897",
+		"nombre": "El Rincón Mexicano",
+		"direccion": {
+			"calle": "Calle México 234",
+			"ciudad": "Ciudad H",
+			"provincia": "Provincia H",
+			"codigoPostal": "90123"
+		},
+		"tipo": "Mexicano",
+		"puntuacion": 4.3,
+		"platos": [
+			"Tacos al Pastor",
+			"Guacamole",
+			"Enchiladas"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09898",
+		"nombre": "Seafood Paradise",
+		"direccion": {
+			"calle": "Avenida del Mar 789",
+			"ciudad": "Ciudad I",
+			"provincia": "Provincia I",
+			"codigoPostal": "01234"
+		},
+		"tipo": "Mariscos",
+		"puntuacion": 4.6,
+		"platos": [
+			"Camarones al Ajillo",
+			"Ceviche",
+			"Pulpo a la Gallega"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b09899",
+		"nombre": "Fratelli's",
+		"direccion": {
+			"calle": "Calle Italia 567",
+			"ciudad": "Ciudad J",
+			"provincia": "Provincia J",
+			"codigoPostal": "23456"
+		},
+		"tipo": "Italiano",
+		"puntuacion": 4.4,
+		"platos": [
+			"Spaghetti Bolognese",
+			"Risotto Funghi",
+			"Tiramisú"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b0989a",
+		"nombre": "Burger Joint",
+		"direccion": {
+			"calle": "Avenida de la Hamburguesa 789",
+			"ciudad": "Ciudad K",
+			"provincia": "Provincia K",
+			"codigoPostal": "34567"
+		},
+		"tipo": "Hamburguesería",
+		"puntuacion": 4.2,
+		"platos": [
+			"Cheeseburger",
+			"Burger BBQ",
+			"Papas Fritas"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b0989b",
+		"nombre": "Oriental Delight",
+		"direccion": {
+			"calle": "Calle del Sabor 012",
+			"ciudad": "Ciudad L",
+			"provincia": "Provincia L",
+			"codigoPostal": "45678"
+		},
+		"tipo": "Cocina Oriental",
+		"puntuacion": 4.7,
+		"platos": [
+			"Pollo Teriyaki",
+			"Arroz Frito",
+			"Rolls de Salmón"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b0989c",
+		"nombre": "La Trattoria",
+		"direccion": {
+			"calle": "Avenida Italia 345",
+			"ciudad": "Ciudad M",
+			"provincia": "Provincia M",
+			"codigoPostal": "56789"
+		},
+		"tipo": "Italiano",
+		"puntuacion": 4.3,
+		"platos": [
+			"Lasagna",
+			"Gnocchi al Pesto",
+			"Panna Cotta"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b0989d",
+		"nombre": "El Rinconcito",
+		"direccion": {
+			"calle": "Calle Sabores 678",
+			"ciudad": "Ciudad N",
+			"provincia": "Provincia N",
+			"codigoPostal": "67890"
+		},
+		"tipo": "Comida Casera",
+		"puntuacion": 4.1,
+		"platos": [
+			"Lentejas",
+			"Chuletas de Cerdo",
+			"Arroz con Leche"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b0989e",
+		"nombre": "La Cantina",
+		"direccion": {
+			"calle": "Avenida México 234",
+			"ciudad": "Ciudad O",
+			"provincia": "Provincia O",
+			"codigoPostal": "90123"
+		},
+		"tipo": "Mexicano",
+		"puntuacion": 4.5,
+		"platos": [
+			"Nachos",
+			"Tacos de Carnitas",
+			"Flan"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b0989f",
+		"nombre": "La Marmita",
+		"direccion": {
+			"calle": "Calle del Sabor 789",
+			"ciudad": "Ciudad P",
+			"provincia": "Provincia P",
+			"codigoPostal": "01234"
+		},
+		"tipo": "Fusión",
+		"puntuacion": 4.7,
+		"platos": [
+			"Ceviche Fusion",
+			"Tacos Asiáticos",
+			"Tarta de Maracuyá"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:30 PM - 11:30 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a0",
+		"nombre": "Gourmet Experience",
+		"direccion": {
+			"calle": "Avenida Gourmet 567",
+			"ciudad": "Ciudad Q",
+			"provincia": "Provincia Q",
+			"codigoPostal": "23456"
+		},
+		"tipo": "Gourmet",
+		"puntuacion": 4.9,
+		"platos": [
+			"Foie Gras",
+			"Risotto Trufado",
+			"Crème Brûlée"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a1",
+		"nombre": "El Sabor del Mar",
+		"direccion": {
+			"calle": "Calle del Mar 123",
+			"ciudad": "Ciudad R",
+			"provincia": "Provincia R",
+			"codigoPostal": "34567"
+		},
+		"tipo": "Mariscos",
+		"puntuacion": 4.4,
+		"platos": [
+			"Paella de Mariscos",
+			"Camarones al Ajillo",
+			"Pulpo a la Gallega"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a2",
+		"nombre": "Spice World",
+		"direccion": {
+			"calle": "Avenida del Sabor 456",
+			"ciudad": "Ciudad S",
+			"provincia": "Provincia S",
+			"codigoPostal": "56789"
+		},
+		"tipo": "Cocina Asiática",
+		"puntuacion": 4.6,
+		"platos": [
+			"Pollo al Curry",
+			"Arroz Frito",
+			"Rolls de Salmón"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a4",
+		"nombre": "BBQ Heaven",
+		"direccion": {
+			"calle": "Avenida del Asado 901",
+			"ciudad": "Ciudad U",
+			"provincia": "Provincia U",
+			"codigoPostal": "90123"
+		},
+		"tipo": "Asador",
+		"puntuacion": 4.7,
+		"platos": [
+			"Costillas BBQ",
+			"Pulled Pork",
+			"Maíz a la Parrilla"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a5",
+		"nombre": "Wok Wonders",
+		"direccion": {
+			"calle": "Calle del Sabor 123",
+			"ciudad": "Ciudad V",
+			"provincia": "Provincia V",
+			"codigoPostal": "01234"
+		},
+		"tipo": "Cocina Asiática",
+		"puntuacion": 4.5,
+		"platos": [
+			"Pollo Teriyaki",
+			"Arroz Frito",
+			"Rolls de Salmón"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a6",
+		"nombre": "La Piazzetta",
+		"direccion": {
+			"calle": "Avenida Italia 901",
+			"ciudad": "Ciudad W",
+			"provincia": "Provincia W",
+			"codigoPostal": "23456"
+		},
+		"tipo": "Italiano",
+		"puntuacion": 4.6,
+		"platos": [
+			"Pizza Margherita",
+			"Gnocchi al Pesto",
+			"Tiramisú"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a7",
+		"nombre": "Taco Loco",
+		"direccion": {
+			"calle": "Calle México 345",
+			"ciudad": "Ciudad X",
+			"provincia": "Provincia X",
+			"codigoPostal": "34567"
+		},
+		"tipo": "Mexicano",
+		"puntuacion": 4.4,
+		"platos": [
+			"Tacos al Pastor",
+			"Guacamole",
+			"Enchiladas"
+		],
+		"horario": {
+			"lunesAViernes": "11:30 AM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a8",
+		"nombre": "Fisherman's Cove",
+		"direccion": {
+			"calle": "Avenida del Mar 678",
+			"ciudad": "Ciudad Y",
+			"provincia": "Provincia Y",
+			"codigoPostal": "56789"
+		},
+		"tipo": "Mariscos",
+		"puntuacion": 4.8,
+		"platos": [
+			"Camarones al Ajillo",
+			"Ceviche",
+			"Pulpo a la Gallega"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	},
+	{
+		"_id": "64878fab37f8cf39b6b098a9",
+		"nombre": "Mama Mia",
+		"direccion": {
+			"calle": "Calle Italia 012",
+			"ciudad": "Ciudad Z",
+			"provincia": "Provincia Z",
+			"codigoPostal": "67890"
+		},
+		"tipo": "Italiano",
+		"puntuacion": 4.2,
+		"platos": [
+			"Spaghetti Bolognese",
+			"Risotto Funghi",
+			"Tiramisú"
+		],
+		"horario": {
+			"lunesAViernes": "12:00 PM - 10:00 PM",
+			"sabado": "12:00 PM - 11:00 PM",
+			"domingo": "Cerrado"
+		}
+	}
+]);

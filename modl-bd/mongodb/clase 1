@@ -1,0 +1,89 @@
+Mongo se basa en archivos JSON --> BJSON que convierte en binario y hace su magia.
+
+
+sudo apt update && sudo apt upgrade -y
+
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+sudo apt-get update
+
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
+sudo apt-get install -y mongodb-org
+
+sudo systemctl start mongod
+
+sudo systemctl status mongod
+
+
+
+para entrar a mongodb -- mongosh
+
+
+db.version()
+
+db.host
+
+db.getName()
+
+use cinema
+
+db.getName()
+
+db.createCollection("Movies")
+
+show collections
+
+db.Movies.drop()
+
+db.dropDatabase()
+
+show databases
+
+# esto nos crea la BD usuarios
+use Usuarios
+
+#esto nos crea la tabla " colección" usuario
+db.usuario.insertOne({name:'Ivan Moreno',age: 30})
+
+db.usuario.find()
+
+db.usuario.insertMany([{name: 'Ejemplo 1', age: 50},{name: 'Ejemplo 2', age: 34},{name: 'Ejemplo 3', age: 50},{name: 'Ejemplo 4', age: 50}])
+
+db.usuario.find()
+
+# updateOne actualiza el primero que encuentra
+db.usuario.updateOne({_id: ObjectId('656a0d4ad3aa8db851d64486')},{$set: {age: 40}})
+#updateOne({AQUI LA VALIDACION},{$set: {aqui lo que actualizamos}})
+# updateMANY actualiza el todos los campos que cumplan.
+db.usuario.updateMany({_id: ObjectId('656a0d4ad3aa8db851d64486')},{$set: {age: 40}})
+
+db.usuario.deleteOne({age: 50})
+
+db.usuario.countDocuments({age: 50})
+db.usuario.countDocuments({age: 50, name: 'Ejemplo 1'})
+
+db.usuario.updateMany( {age:50}, {$set: {name: {$concat: ['$name',' SALUDOS']}}} )
+
+
+# instalmos interfaz
+
+https://www.mongodb.com/products/tools/compass
+
+https://www.mongodb.com/try/download/compass
+
+# ejercicios creamos bd Restaurante con restaurantes
+# le metemos los datos del .txt
+Ejercicio: Encuentra todos los restaurantes italianos.
+Ejercicio: Encuentra el restaurante con la puntuación más alta.
+Ejercicio: Encuentra todos los restaurantes que estén abiertos los sábados
+Ejercicio: Encuentra todos los restaurantes que sirvan pizza.
+Ejercicio: Encuentra los nombres y direcciones de los restaurantes que estén en la provincia "Provincia A"
+Ejercicio: Actualiza la puntuación del restaurante "Restaurante Italiano Bella Vita" a 4.7.
+Ejercicio: Añade el plato "Ravioli" al restaurante "La Trattoria".
+Ejercicio: Elimina el plato "Enchiladas" del restaurante "El Rinconcito".
+Ejercicio: Encuentra todos los restaurantes cuyo código postal comience con "23".

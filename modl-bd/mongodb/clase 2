@@ -1,0 +1,4 @@
+db.restaurantes.find({ puntuacion: {$gte: 4.5}}, { nombre:1, platos: 1, _id:0 })
+
+
+db.restaurantes.find({ "direccion.codigoPostal": "23456" },{ nombre: 1, _id:0 })
