@@ -1,0 +1,217 @@
+
+
+# menor mayor igual a cosas X
+#$gt >
+#$gte >=
+#$lt <
+#$lte <=
+db.restaurantes.find({ puntuacion: {$gte: 4.5}}, { nombre:1, platos: 1, _id:0 })
+#                     (Cursores, Proyecciones)
+# usamos las comillas, asi accedemos a nuestros objetos dentro de un objeto o documento que tiene un objeto.
+# { 
+#   'direccion': {
+#     'codigoPostal': '23456'
+#   },
+#   'nombre': 1
+# }
+db.restaurantes.find({ 'direccion.codigoPostal': '23456' },{ nombre: 1, _id:0 })
+
+# array 'vector'
+
+# buscando en el array cast de nuestro documento 'objeto', que contenga en cualquier posicion del array Paco Meliano
+db.films.find({ cast: 'Paco Meliano' }) 
+
+# buscando en el array cast de nuestro documento 'objeto', que contenga en la primera posicion del array Paco Meliano
+db.films.find({ cast: ['Paco Meliano'] }) 
+
+# buscando en el array cast de nuestro documento 'objeto', que contenga en la primera posicion del array Paco Meliano y seguido Paquita la Brava.
+db.films.find({ cast: ['Paco Meliano', 'Paquita la Brava'] })
+
+# buscando en el array cast de nuestro documento 'objeto', que contenga en la primera posicion del array Paco Meliano.
+db.films.find({ 'cast.0' : 'Paco Meliano' })
+
+
+# sort es muy biena nos ordena si pones -1 DESC 1 ASC 0 ni puta idea.
+
+db.productos.find({ sort: { price: -1 } }).limit(1) # nos devuelve la busca en ordenada desc y nos da el primero, de locos.
+
+operadores para campos
+
+$unset
+db.productos.updateOne(
+  {title: 'Pulp Fiction'},
+  {$unset: {'year': 00}} #Eliminando del documento la clave 'year' elimina la propiedad year de nuestro objeto 'documento'
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'},
+  {$set: {'year': 1994}} #Añadiendo al documento la clave 'year' con valor 1994
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'},
+  {$rename: {'year': 'año'}} #Cambiando el nombre de la clave 'year' a 'año'
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, # valor act 1994
+  {$max: {'year': 2000}} #Actualiza el año, si el valor que damos es mayor al del año actual.
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, # valor act 2000
+  {$min: {'year': 1994}} #Actualiza el año, si el valor que damos es menor al  del año actual.
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {
+    $inc: { #increment si ponemos en negativo resta
+      'tomato.reviews': 1, #Aumenta en 1 el valor de reviews
+      'tomato.userReviews': 25 #Aumenta en 25 el valor de userReviews
+      'tomato.algo': -25 #Decrementa en 25 el valor de algo
+      }
+  } 
+)
+
+# OPERADORES PARA ARRAYS VECTORES
+
+#
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {
+   $addToSet: {
+    actors: 'Uma Thurman' #Añade Uma Thurman si no está ya en el array actors
+   }
+  } 
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {
+   $push: {
+    reviews:{
+      rating: 4.5,
+      reviewer: 'Redes',
+      
+    } #Añade al array reviews el documento rating y reviewer
+   }
+  } 
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {
+   $set: {
+    reviews:{
+      rating: 4.5,
+      reviewer: 'Redes',
+      
+    } #Añade o edita el objeto reviews
+   }
+  } 
+)
+
+
+# $pop - Elimina el primer o útimo elemento de un array
+#      -1 primer elemento
+#       1 último elemento
+
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {
+   $pop: {contador: -1} #Elimina el primer elemento del array contador
+  } 
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {
+   $pull: {contador: 3} #Elimina el elemento del array con valor igual a 3
+  } 
+)
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {
+   $pull: {contador: {$gte:3}} #Elimina todo elemento del array con valor mayor o igual a 3
+  } 
+)
+ 
+db.productos.updateOne(
+  {title: 'Pulp Fiction'}, 
+  {            # anotacion: [0,2,2,0,5,6,8,5]
+   $pullAll: { 
+      anotacion: [0,5] #Elimina todo elemento del array con valor igual a 0 y 5 anotacion: [2,2,6,8]
+    } 
+  }
+)
+
+# LOS MODIFICADORES
+
+db.movieDetails.updateOne (
+  {title: 'The Martian'},
+  {$push: {
+    reviews: {
+      $each: [{ # nos añade varios documentos a nuestro array reviews en orden sin el each insertariamos un array con 3 objetos al final de array reviews
+          rating: 2.5,
+          reviewer: 'Heidi Onda', text: 'Justa another movie'
+        }, {
+          rating: 0.5,
+          reviewer: 'Esther Colero',
+          text: 'The worst movie of the year'
+        }, {
+          rating: 3.5,
+          reviewer: 'Elba Surero',
+          text: 'Nice Movie'
+      }]
+    }
+  }})
+
+
+db.movieDetails.updateOne ( 
+  {title: 'The Martian'},
+  {$push: {
+    contador: { # indicamos la posicion donde se insertará nuestro elemento en nuestro array no sustituye empuja el resto de elemtnos.
+      $each: [7], #hay se usar each si o si lo requiere position.
+      $position: 2 
+    }
+  }})
+
+
+  db.movieDetails.updateMany ( 
+  {rated: null},
+  {$unset: {
+    rated: ''
+  }})
+
+
+db.films.find(
+  { 
+    rated : {$exists:false} #obtenemos todos los documnetos que la propiedad rated no existe.
+  }
+)
+
+
+# la opstions
+
+upsert: true # inserta o actualiza el documento update-inserts
+
+
+
+
+
+
+db.productos.updateOne(
+  {title: 'Pulp Fiction'},
+  {$set: {
+    'director': 'Paco'
+    'year': 1994
+    }}, #Editamos el valor de year por 1994 y director, PERO si no existe por el UPSERT lo insertamos,
+  {upsert: true }
+
+
+)
+
