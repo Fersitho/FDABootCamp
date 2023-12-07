@@ -34,10 +34,10 @@ db.films.find({ 'cast.0' : 'Paco Meliano' })
 # sort es muy biena nos ordena si pones -1 DESC 1 ASC 0 ni puta idea.
 
 # esta mal david!!! EL SORT NO ES ASI IOOO!
-db.productos.find({ sort: { price: -1 } }).limit(1) # nos devuelve la busca en ordenada desc y nos da el primero, de locos.
-db.restaurantes.find().sort({ restaurant_id: -1 })
+ # nos devuelve la busca en ordenada desc y nos da el primero, de locos.
+db.restaurantes.find().sort({ restaurant_id: -1 }).limit(1)
 
-
+count()
 
 # operadores para campos
 
@@ -250,7 +250,7 @@ db.productos.deleteMany(# elimina todos los documnetos que encuentra el filtro.
 
 #Ope. comparación    RELACIONAL    MONGODB
 Igual que          --    =    -->    $eq   -- > Equal to
-Distinto de        --    <>   -->    $ne   -- > Not Equal to
+Distinto de        --  != <>  -->    $ne   -- > Not Equal to
 Mayor que          --    >    -->    $gt   -- > Greater than
 Mayor o igual que  --    >=   -->    $gte  -- > Greater than or Equal to
 Menor que          --    <    -->    $lt   -- > Less than
