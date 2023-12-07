@@ -33,9 +33,13 @@ db.films.find({ 'cast.0' : 'Paco Meliano' })
 
 # sort es muy biena nos ordena si pones -1 DESC 1 ASC 0 ni puta idea.
 
+# esta mal david!!! EL SORT NO ES ASI IOOO!
 db.productos.find({ sort: { price: -1 } }).limit(1) # nos devuelve la busca en ordenada desc y nos da el primero, de locos.
+db.restaurantes.find().sort({ restaurant_id: -1 })
 
-operadores para campos
+
+
+# operadores para campos
 
 $unset
 db.productos.updateOne(
@@ -75,8 +79,6 @@ db.productos.updateOne(
 )
 
 # OPERADORES PARA ARRAYS VECTORES
-
-#
 
 db.productos.updateOne(
   {title: 'Pulp Fiction'}, 
@@ -199,11 +201,6 @@ db.films.find(
 
 upsert: true # inserta o actualiza el documento update-inserts
 
-
-
-
-
-
 db.productos.updateOne(
   {title: 'Pulp Fiction'},
   {$set: {
@@ -211,7 +208,205 @@ db.productos.updateOne(
     'year': 1994
     }}, #Editamos el valor de year por 1994 y director, PERO si no existe por el UPSERT lo insertamos,
   {upsert: true }
-
-
+)
+# la direncia de update y replace --> update añade o modifica pero no elimina los campos no indicados
+# con replace, remplaza el documento por completo.
+db.productos.replaceOne(
+  {title: 'Pulp Fiction'},
+  { # aqui todo el documenot "objeto" que reemplazará el existente.
+    "title": 'Paco',
+  }
 )
 
+# Eliminar DELETE borrar quitar un documento borrar obejto obt deete
+
+
+db.productos.deleteOne() db.productos.deleteMany()
+
+
+db.productos.deleteOne(
+  {_id: 'tt0110912'}
+)
+db.productos.deleteOne(
+  {title: 'Pulp Fiction'}
+)
+
+db.productos.deleteMany(# elimina todos los documnetos que encuentra el filtro.
+  {director: 'Paco'}
+)
+db.productos.deleteOne( # elimina el primer documneto que encuentra el filtro.
+  {director: 'Paco'}
+)
+
+db.productos.deleteMany(# elimina todos los documnetos que encuentra el filtro.
+  {year: {$gt: 2000}}
+)
+
+
+# LOS OPERADORES DE CONSULTA EN LOS FILTROS!
+# Tenemos operadors de: comparacion, elementos, logicos, arrays y evaluacion
+
+# 1 comparacion aquellos operadors que nos permiten buscar segun el valor de un campo.
+
+#Ope. comparación    RELACIONAL    MONGODB
+Igual que          --    =    -->    $eq   -- > Equal to
+Distinto de        --    <>   -->    $ne   -- > Not Equal to
+Mayor que          --    >    -->    $gt   -- > Greater than
+Mayor o igual que  --    >=   -->    $gte  -- > Greater than or Equal to
+Menor que          --    <    -->    $lt   -- > Less than
+Menor o igual que  --    <=   -->    $lte  -- > Less than or Equal to
+
+db.movieDetails.find(
+  { runtime: { $gte: 90, lt: 120 } }
+) # Nos muestras las pelis que tengan mas tiempo de 90 y menos de 120 muinutos
+# Operadors de pertenencia de conjuntos
+
+      IN     --> $in  --> Pertenece
+      NOT IN --> $nin --> No pertenece
+
+db.movieDetails.find(
+  { rated: { $in: ['G', 'PG'] } } # nos muestra todas las peliculas que contengan G o PG.
+)
+
+db.movieDetails.find(
+  { rated: { $nin: ['G', 'PG', 'PG-13'] } } # nos muestra todas las peliculas que no contengan G o PG o PG-13.
+)
+
+# Operadores Elementos: $exists y $type
+
+# $exists nos muestra los documentos que tengan o no tengan un campo independienteente del valor que tengan en su interior.
+db.movieDetails.find(
+  { poster: {$exist: true} } # muestra los documentos en los que el campo poster existe esta definido incluidos los NULL.
+)
+db.movieDetails.find(
+  { poster: {$exist: false} } # muestra los documentos en los que el campo poster no existe "se ven vacios en la tabla" y null no incluido.
+)
+
+db.movieDetails.find(
+  { poster: null } # muestra los documentos en los que el campo poster es null o esta vacio "no existe"
+)
+
+# $type nos muestra los docu,mentos que tengan un determinado campo pero con un tipo Integer varchar etc... mongodb nos permite tener el mismo campo en diferentes documentos con diferentes tipos es flexible.
+
+db.movieDetails.find(
+  { viewerRating: {$type: 'int'} } # muestra los documentos en los que el campo poster viewerRating es del tipo integer!
+)
+
+
+
+
+# OPERADORES LOGICOS AND NOT NOR OR && || 
+
+$and --> solo cumple si todo se cumple
+$not --> invierte el efecto de la condicion 
+$nor --> todos los documentos que no cumplan ninguna de esas condiciones
+$or  --> devuelve todos los documento que cumplan almenos con 1 opcion de filtrado.
+
+# sintaxis dentro de un .find()
+# $or 
+# Une las cláusulas con un OR lógico 
+   { $or: [ { selector1 }, { selector2 }, ... ] }
+
+# $nor
+#Une cláusulas de consulta con un NOR lógico 
+   { $nor: [ { selector1 }, { selector2 }, ... ] }
+
+# $and 
+#Une cláusulas de consulta con un AND lógico 
+   { $and: [ { selector1 }, { selector2 }, ... ] }
+
+ # $not 
+ #Invierte el efecto de una expresión de consulta.
+   { campo: { $not: { selector } } }
+
+db.movieDetails.find(
+  { $or: [
+    { 'director': 'PACO'},
+    { 'director' : 'Paquita'}
+  ]} #nos muestra todos los documentos que tengan como director a paco o paquita.
+)
+
+db.movieDetails.find(
+  { $nor: [
+    { 'director': 'PACO'},
+    { 'director' : 'Paquita'}
+  ]} #nos muestra todos los documentos que no tengan como director a paco o paquita.
+)
+
+db.movieDetails.find(
+  { $and: [
+    { 'director': 'PACO'},
+    { 'runtime' : { $gt: 120 }}
+  ]} #nos muestra todos los documentos que tengan como director a paco y la duraciopn sea mauyor a 120 minutos.
+)
+
+db.movieDetails.find(
+  { $and: [
+    { 'director': 'PACO'},
+    { 'runtime' : { $not: { $gt: 120 }}} # invierte la condicion ahora monstrara las menores a 120 minutos.
+  ]} #nos muestra todos los documentos que tengan como director a paco y la duraciopn sea menor a 120 minutos.
+)
+
+db.movieDetails.find(
+  {
+    { 'runtime' : { $not: { $gt: 120 }}} 
+  } #nos muestra todos los documentos que tengan  la duraciopn sea menor a 120 minutos.
+)
+ 
+
+# Tenemos 3 opciones para un campo en nuestros documentos:
+# 1º Es definido existe con un valor asignado.
+# 2º Existe pero tiene como valor NULL
+# 3º No existe el campo.
+
+# dentro de un find:
+{ 'year': null }
+# Nos  muestra tanto los null como los que no existen
+
+{ 'year': {$ne: null} }
+# Nos muestra los que existen, no muestra los null.
+
+{ 'year': {$exist: true} }
+# Nos  muestra tanto los null como los que existen
+
+{ 'year': {$exist: false} }
+# Nos muestra solos los que no existen, "no muestra los null"
+
+{ $and: [
+  {'year': null},
+  {'year': {$exist: true}}
+] }
+
+# Operadores para ARRAYS "VECTORES"
+
+$all $elemMatch $size
+
+db.movieDetails.find(
+  { countries: { $all: ['USA','Spain'] }}
+) 
+# nos muestra todos los documentos que tengan en el campo countries "array" todos los valores que especificamos.
+# pueden devolvernos el caso que tenga tener más valores, pero siempre los 2 incluidos, nunca menos.
+# no tienen que estar en el mismo orden.
+
+db.movieDetails.find(
+  { countries: { $all: ['USA','Spain'] }}
+) 
+# Nos devuelve solo documentos que contenien el campo vector con el tamaño indicado. que tiene un .lenght igual
+db.movieDetails.find(
+  { countries: { $size: 2 }}
+) 
+
+# $elemntMatch 
+# Nos devievle los documentos que contienen un elemento del campo vector que coincide con todas las condiciones especificadas.
+
+db.movieDetails.find(
+  { boxOffice: { $elemntMatch: {"pais": "españa", "ingreso": {$gt: 200}} }}
+) 
+
+# REGEX EXPRESIONES REGULARES REGULAR REGEX
+# para más compplejo: $text -- mongodb oficial Evalutaion
+
+# { campo: { $regex: /queryREGEX/<options> }}
+db.movieDetails.find(
+  { boxOffice: { $elemntMatch: {"pais": "españa", "ingreso": {$gt: 200}} }}
+) 
