@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     const userId = parseInt(req.params.id)
     const user = USERS.find(user => user.id == userId)
+    
     res.send(user)
 })
 
@@ -28,26 +29,33 @@ router.patch("/:id", (req, res) => {
     const { name, email } = req.body
     if (!user) {
         res.send("No existe el usuario")
-    }
-   
-    if(name){
-        user.name = name
-    }
-    if(email){
-        user.email = email
+
+    } else {
+
+        if (name) {
+            user.name = name
+        }
+
+        if (email) {
+            user.email = email
+        }
+
+        res.send(user)
+
     }
 
-    res.send(user)
+
 })
 
 // Para crear un dato nuevo
 router.post("/", (req, res) => {
     let idUser = USERS.length + 1
+    const { name, email } = req.body
 
     USERS.push({
         id: idUser,
-        name: `Usario ${idUser}`,
-        email: `usuario${idUser}@example.com`
+        name: !name ? `Usario ${idUser}` : name,
+        email: !email ? `usuario${idUser}@example.com` : email
     })
 
     res.send(USERS)
@@ -57,13 +65,13 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
     const userId = parseInt(req.params.id)
     const userFilter = USERS.filter(user => user.id !== userId)
+
     if (userFilter.length === USERS.length) {
         res.send("No existe el usuario")
     } else {
         USERS = userFilter
         res.send(USERS)
     }
-
 })
 
 
