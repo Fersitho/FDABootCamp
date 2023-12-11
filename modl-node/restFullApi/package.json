@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node"
+    "start": "node ./server/app.js",
+    "dev": "nodemon ./server/app.js"
   },
-  "author": "",
+  "author": "Fernando Díaz Alaminos",
+ 
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
