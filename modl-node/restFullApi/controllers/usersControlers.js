@@ -1,3 +1,5 @@
+const userModel = require('../models/userModels')
+
 let USERS = [
     { id: 1, name: 'Usuario 1', email: 'usuario1@example.com' },
     { id: 2, name: 'Usuario 2', email: 'usuario2@example.com' },
@@ -5,15 +7,18 @@ let USERS = [
 ];
 
 // para obtener datos
-const getUsers = (req, res) => {
-    res.send(USERS);
+const getUsers = async (req, res) => {
+
+    const users = await userModel.find()
+
+    res.send(users);
 }
 
 // para obtener datos concretos
-const getUserById = (req, res) => {
-    const userId = parseInt(req.params.id)
-    const user = USERS.find(user => user.id == userId)
-
+const getUserById = async (req, res) => {
+    const userId = req.params.id
+    // const user = await userModel.find({'_id': userId})
+    const user = await userModel.findById(userId)
     res.send(user)
 }
 
