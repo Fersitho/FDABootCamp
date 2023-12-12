@@ -64,15 +64,20 @@ const postUser = (req, res) => {
 }
 
 // Para borrar algo.
-const delUserById = (req, res) => {
-    const userId = parseInt(req.params.id)
-    const userFilter = USERS.filter(user => user.id !== userId)
+const delUserById = async (req, res) => {
+    try {
+        const userId = req.params.id;
 
-    if (userFilter.length === USERS.length) {
-        res.send("No existe el usuario")
-    } else {
-        USERS = userFilter
-        res.send(USERS)
+        const result = await userModel.deleteOne({ '_id': userId });
+        console.log(result)
+        if (result.deletedCount === 0) {
+            res.status(404).send("No se encontró el usuario");
+        } else {
+            res.send("Usuario eliminado correctamente");
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error al intentar eliminar el usuario");
     }
 }
 
