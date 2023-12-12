@@ -1,5 +1,3 @@
-const router = require('express').Router()
-
 let USERS = [
     { id: 1, name: 'Usuario 1', email: 'usuario1@example.com' },
     { id: 2, name: 'Usuario 2', email: 'usuario2@example.com' },
@@ -7,21 +5,20 @@ let USERS = [
 ];
 
 // para obtener datos
-router.get("/", (req, res) => {
+const getUsers = (req, res) => {
     res.send(USERS);
-})
+}
 
 // para obtener datos concretos
-router.get("/:id", (req, res) => {
+const getUserById = (req, res) => {
     const userId = parseInt(req.params.id)
     const user = USERS.find(user => user.id == userId)
-    
+
     res.send(user)
-})
+}
 
-// para actualizar algo que existe.
-router.patch("/:id", (req, res) => {
-
+// para actualizar algo que existe usamos el patch!!!.
+const updateById = (req, res) => {
     const userId = parseInt(req.params.id)
 
     const user = USERS.find(user => user.id == userId)
@@ -43,26 +40,26 @@ router.patch("/:id", (req, res) => {
         res.send(user)
 
     }
-
-
-})
+}
 
 // Para crear un dato nuevo
-router.post("/", (req, res) => {
-    let idUser = USERS.length + 1
+const postUser = (req, res) => {
+    let newIndex = USERS.length + 1
     const { name, email } = req.body
 
-    USERS.push({
-        id: idUser,
-        name: !name ? `Usario ${idUser}` : name,
-        email: !email ? `usuario${idUser}@example.com` : email
-    })
+    const newUser = {
+        id: newIndex,
+        name: !name ? `Usuario ${newIndex}` : name,
+        email: !email ? `usuario${newIndex}@example.com` : email
+    }
+    
+    USERS.push(newUser)
 
-    res.send(USERS)
-})
+    res.send(newUser)
+}
 
 // Para borrar algo.
-router.delete("/:id", (req, res) => {
+const delUserById = (req, res) => {
     const userId = parseInt(req.params.id)
     const userFilter = USERS.filter(user => user.id !== userId)
 
@@ -72,7 +69,12 @@ router.delete("/:id", (req, res) => {
         USERS = userFilter
         res.send(USERS)
     }
-})
+}
 
-
-module.exports = router;
+module.exports = {
+    getUsers, 
+    getUserById,
+    updateById,
+    postUser,
+    delUserById
+};

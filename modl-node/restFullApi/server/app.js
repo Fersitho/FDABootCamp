@@ -6,16 +6,13 @@
 // })
 
 const express = require('express')
-
 const PORT = 3000
-
+const userRouter = require('../routers/userRoutes')
 const app = express()
 
 app.use(express.json())
 
-const users = require('../controllers/usersControlers')
-
-app.use("/users", users)
+app.use("/users", userRouter)
 
 app.listen(PORT, () => {
     console.log('Server is running')
