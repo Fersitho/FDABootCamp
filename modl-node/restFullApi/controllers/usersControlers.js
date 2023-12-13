@@ -1,10 +1,10 @@
 const userModel = require('../models/userModels')
 
-let USERS = [
-    { id: 1, name: 'Usuario 1', email: 'usuario1@example.com' },
-    { id: 2, name: 'Usuario 2', email: 'usuario2@example.com' },
-    { id: 3, name: 'Usuario 3', email: 'usuario3@example.com' }
-];
+// let USERS = [
+//     { id: 1, name: 'Usuario 1', email: 'usuario1@example.com' },
+//     { id: 2, name: 'Usuario 2', email: 'usuario2@example.com' },
+//     { id: 3, name: 'Usuario 3', email: 'usuario3@example.com' }
+// ];
 
 // para obtener datos
 const getUsers = async (req, res) => {
@@ -48,19 +48,38 @@ const updateById = (req, res) => {
 }
 
 // Para crear un dato nuevo
-const postUser = (req, res) => {
-    let newIndex = USERS.length + 1
-    const { name, email } = req.body
+const postUser = async (req, res) => {
 
-    const newUser = {
-        id: newIndex,
-        name: !name ? `Usuario ${newIndex}` : name,
-        email: !email ? `usuario${newIndex}@example.com` : email
+    try {
+        const { name, email } = req.body
+
+        const newUser = {
+            'name': name,
+            'email': email
+        }
+
+        const result = await userModel.create({
+            'name': name,
+            'email': email
+        })
+
+        console.log(result)
+        
+        if (result.deletedCount === 0) {
+            res.status(404).send("No se encontró el usuario");
+        } else {
+            res.send("Usuario eliminado correctamente");
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error al intentar eliminar el usuario");
     }
-    
-    USERS.push(newUser)
 
-    res.send(newUser)
+
+
+    // USERS.push(newUser)
+
+    // res.send(user)
 }
 
 // Para borrar algo.
@@ -82,7 +101,7 @@ const delUserById = async (req, res) => {
 }
 
 module.exports = {
-    getUsers, 
+    getUsers,
     getUserById,
     updateById,
     postUser,
