@@ -387,10 +387,10 @@ db.movieDetails.find(
 # nos muestra todos los documentos que tengan en el campo countries "array" todos los valores que especificamos.
 # pueden devolvernos el caso que tenga tener más valores, pero siempre los 2 incluidos, nunca menos.
 # no tienen que estar en el mismo orden.
-
 db.movieDetails.find(
   { countries: { $all: ['USA','Spain'] }}
 ) 
+
 # Nos devuelve solo documentos que contenien el campo vector con el tamaño indicado. que tiene un .lenght igual
 db.movieDetails.find(
   { countries: { $size: 2 }}
@@ -410,3 +410,114 @@ db.movieDetails.find(
 db.movieDetails.find(
   { boxOffice: { $elemntMatch: {"pais": "españa", "ingreso": {$gt: 200}} }}
 ) 
+
+
+Método aggregate:
+El método aggregate en MongoDB es una poderosa herramienta que permite realizar operaciones de agregación en documentos de una colección. Estas operaciones son similares a las operaciones GROUP BY en SQL, pero con la flexibilidad y capacidad de manipulación de documentos JSON.
+
+La estructura básica de una operación de agregación con aggregate consiste en una serie de etapas, donde cada etapa realiza una transformación específica en los documentos. Estas etapas se proporcionan como una matriz de objetos en la que cada objeto representa una etapa de la operación.
+
+Etapas de aggregate:
+
+$match (Filtrado): Filtra los documentos que cumplen con ciertos criterios.
+{ $match: { campo: valor } }
+
+
+$project (Proyección): Incluye o excluye campos, y puede crear nuevos campos calculados.
+{ $project: { campo1: 1, campo2: 1, nuevoCampo: { $sum: ["$campo1", "$campo2"] } } }
+
+
+$group (Agrupación): Agrupa documentos basándose en un campo y realiza operaciones de agregación (sumas, promedios, etc.) en esos grupos.
+{ $group: { _id: "$campo", total: { $sum: "$cantidad" } } }
+
+
+$sort (Ordenamiento): Ordena los documentos según un campo.
+{ $sort: { campo: 1 } }
+
+
+$limit (Límite): Limita el número de documentos devueltos.
+{ $limit: 10 }
+
+
+$unwind (Desdoblar campos de matriz): Desdobla campos de matriz en documentos separados.
+{ $unwind: "$campoArray" }
+
+Estas etapas se pueden encadenar en cualquier orden según tus necesidades.
+
+Ejemplo de Agregación Completa: Supongamos que tienes una colección llamada ventas y deseas obtener el total de ventas por producto y por año. El código podría verse así:
+
+db.ventas.aggregate([
+  { $match: { fecha: { $gte: ISODate('2022-01-01'), $lt: ISODate('2023-01-01') } } },
+  { $project: { producto: 1, cantidad: 1, año: { $year: "$fecha" } } },
+  { $group: { _id: { producto: "$producto", año: "$año" }, totalVentas: { $sum: "$cantidad" } } },
+  { $sort: { "_id.año": 1, totalVentas: -1 } },
+  { $limit: 10 }
+])
+
+Este ejemplo realiza una serie de etapas para filtrar las ventas por un rango de fechas, proyectar campos necesarios, agrupar por producto y año, calcular el total de ventas y finalmente ordenar y limitar los resultados.
+
+
+Operador $group:
+$group es un operador en MongoDB que se utiliza para agrupar documentos por un campo específico y realizar operaciones de agregación en esos grupos. Es una de las etapas clave en las operaciones de agregación.
+
+Estructura básica del operador $group:
+
+{
+  $group: {
+    _id: <campo o expresión de agrupación>,
+    <nueva_variable_1>: { <operador>: <expresión> },
+    <nueva_variable_2>: { <operador>: <expresión> },
+    // ...
+  }
+}
+_id: Especifica el campo por el cual se agruparán los documentos. Puedes usar null si deseas realizar una agregación sin agrupación explícita.
+
+<nueva_variable_1>, <nueva_variable_2>, ...: Son variables que representan los resultados de operaciones de agregación. Puedes calcular la media, suma, contar, etc., en estas variables.
+
+<operador>: Indica la operación de agregación que deseas realizar, como $sum, $avg, $min, $max, $push, entre otros.
+
+<expresión>: Representa el campo o la expresión sobre la cual se realizará la operación de agregación.
+
+Ejemplo de aggregate con $group:
+db.productos.aggregate([
+  {
+    $group: {
+      _id: null,
+      media_precio: { $avg: "$precio" }
+    }
+  }
+])
+
+los operadores más comunes que puedes utilizar dentro de la etapa $group:
+
+Operadores de Acumulación:
+$sum: Calcula la suma de los valores de un campo.
+$avg: Calcula el promedio de los valores de un campo.
+$min: Encuentra el valor mínimo de un campo.
+$max: Encuentra el valor máximo de un campo.
+$first: Devuelve el primer valor encontrado en el grupo.
+$last: Devuelve el último valor encontrado en el grupo.
+
+Operadores de Expresiones Aritméticas:
+$add: Suma valores.
+$subtract: Resta valores.
+$multiply: Multiplica valores.
+$divide: Divide valores.
+
+Operadores de Conjunto:
+$addToSet: Agrega valores únicos a un conjunto.
+$push: Agrega valores a un array.
+
+Operadores de Fecha y Hora:
+$year: Extrae el año de una fecha.
+$month: Extrae el mes de una fecha.
+$dayOfMonth: Extrae el día del mes de una fecha.
+$hour, $minute, $second: Extraen la hora, minuto y segundo de una fecha.
+
+Operadores de Condición:
+$cond: Evalúa una expresión de condición y devuelve un resultado basado en el resultado de esa condición.
+
+Otros Operadores:
+$addToSet: Agrega valores únicos a un conjunto.
+$push: Agrega valores a un array.
+$sum: Suma los valores de un campo.

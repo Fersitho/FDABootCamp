@@ -8,6 +8,7 @@ const mongoose = require("mongoose")
 const express = require("express")
 const PORT = 3000
 const userRouter = require("../routers/userRoutes")
+const productRoutes = require("../routers/productRoutes")
 const app = express()
 
 require("dotenv").config();
@@ -29,7 +30,10 @@ db.on("disconnected", () => {
 
 app.use(express.json())
 
+// apis
 app.use("/users", userRouter)
+app.use("/products", productRoutes)
+
 
 app.listen(PORT, () => {
     console.log("Server is running")

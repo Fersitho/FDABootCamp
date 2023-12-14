@@ -1,109 +1,103 @@
-const userModel = require('../models/userModels')
+const userModel = require("../models/userModels");
+const { sendEmail } = require("../services/emailService");
 
-// let USERS = [
-//     { id: 1, name: 'Usuario 1', email: 'usuario1@example.com' },
-//     { id: 2, name: 'Usuario 2', email: 'usuario2@example.com' },
-//     { id: 3, name: 'Usuario 3', email: 'usuario3@example.com' }
-// ];
 
-// para obtener datos
 const getUsers = async (req, res) => {
-
-    const users = await userModel.find()
-
-    res.send(users);
-}
-
-// para obtener datos concretos
-const getUserById = async (req, res) => {
-    const userId = req.params.id
-    // const user = await userModel.find({'_id': userId})
-    const user = await userModel.findById(userId)
-    res.send(user)
-}
-
-// para actualizar algo que existe usamos el patch!!!.
-const updateById = (req, res) => {
-    const userId = parseInt(req.params.id)
-
-    const user = USERS.find(user => user.id == userId)
-
-    const { name, email } = req.body
-    if (!user) {
-        res.send("No existe el usuario")
-
-    } else {
-
-        if (name) {
-            user.name = name
-        }
-
-        if (email) {
-            user.email = email
-        }
-
-        res.send(user)
-
-    }
-}
-
-// Para crear un dato nuevo
-const postUser = async (req, res) => {
-
-    try {
-        const { name, email } = req.body
-
-        const newUser = {
-            'name': name,
-            'email': email
-        }
-
-        const result = await userModel.create({
-            'name': name,
-            'email': email
-        })
-
-        console.log(result)
-        
-        if (result.deletedCount === 0) {
-            res.status(404).send("No se encontró el usuario");
-        } else {
-            res.send("Usuario eliminado correctamente");
-        }
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Error al intentar eliminar el usuario");
-    }
-
-
-
-    // USERS.push(newUser)
-
-    // res.send(user)
-}
-
-// Para borrar algo.
-const delUserById = async (req, res) => {
-    try {
-        const userId = req.params.id;
-
-        const result = await userModel.deleteOne({ '_id': userId });
-        console.log(result)
-        if (result.deletedCount === 0) {
-            res.status(404).send("No se encontró el usuario");
-        } else {
-            res.send("Usuario eliminado correctamente");
-        }
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Error al intentar eliminar el usuario");
-    }
-}
-
-module.exports = {
-    getUsers,
-    getUserById,
-    updateById,
-    postUser,
-    delUserById
+  try {
+    const data = await userModel.find(); // Busca todos los usuarios en la base de datos
+    res.status(200).json({ status: "succeeded", data, error: null }); // Devuelve los usuarios encontrados
+  } catch (error) {
+    res
+      .status(500)
+      .json({ status: "failed", data: null, error: error.message }); // Maneja cualquier error que ocurra
+  }
 };
+
+const getUserById = async (req, res) => {
+  try {
+    const userId = req.params.id; // Obtiene el ID del usuario de los parámetros de la solicitud
+    const user = await userModel.findById(userId); // Busca un usuario por su ID
+    res.status(200).json({ status: "succeeded", user, error: null }); // Devuelve el usuario encontrado
+  } catch (error) {
+    res
+      .status(500)
+      .json({ status: "failed", data: null, error: error.message }); // Maneja cualquier error que ocurra
+  }
+};
+
+// //Metodo patch para obtener un unico usuario
+const patchById = async (req, res) => {
+  try {
+    const userId = req.params.id; // Obtiene el ID del usuario de los parámetros de la solicitud
+    const { name, email } = req.body; // Obtiene el nuevo nombre y correo electrónico del usuario
+
+    const user = await userModel.findById(userId); // Busca un usuario por su ID
+
+    if (!user) {
+      return res.status(404).send("El usuario no existe"); // Si el usuario no existe, devuelve un mensaje de error
+    }
+
+    if (name) {
+      user.name = name; // Actualiza el nombre del usuario si se proporciona un nuevo nombre
+    }
+
+    if (email) {
+      user.email = email; // Actualiza el correo electrónico del usuario si se proporciona uno nuevo
+    }
+
+    await user.save(); // Guarda los cambios en la base de datos
+    res.status(200).json({ status: "succeeded", user, error: null }); // Devuelve el usuario actualizado
+  } catch (error) {
+    res
+      .status(500)
+      .json({ status: "failed", data: null, error: error.message }); // Maneja cualquier error que ocurra
+  }
+};
+
+const addUser = async (req, res) => {
+  try {
+    const { name, email } = req.body; // Obtiene el nombre y correo electrónico del nuevo usuario
+
+    const newUser = new userModel({
+      // Crea un nuevo modelo de usuario con los datos proporcionados
+      name,
+      email,
+    });
+
+    await newUser.save(); // Guarda el nuevo usuario en la base de datos
+
+    let dataEmail = {
+      to: "david.espejo.repiso@gmail.com",
+      subject: "Soy una prueba de nodemailer",
+      html: "<h1>Hola, gracias por llegar y no marchar al ver, vaya tela.</h1>"
+    }
+
+    await sendEmail(dataEmail)
+
+    res.status(201).json({ status: "succeeded", newUser, error: null }); // Devuelve el nuevo usuario creado
+  } catch (error) {
+    res
+      .status(500)
+      .json({ status: "failed", data: null, error: error.message }); // Maneja cualquier error que ocurra
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const userId = req.params.id; // Obtiene el ID del usuario de los parámetros de la solicitud
+    const user = await userModel.findById(userId); // Busca un usuario por su ID
+
+    if (!user) {
+      return res.status(404).send("El usuario no existe"); // Si el usuario no existe, devuelve un mensaje de error
+    }
+
+    await userModel.findByIdAndDelete(userId); // Elimina el usuario de la base de datos
+    res.status(200).send({ status: "succeeded", error: null }); // Devuelve un mensaje de éxito
+  } catch (error) {
+    res
+      .status(500)
+      .json({ status: "failed", data: null, error: error.message }); // Maneja cualquier error que ocurra
+  }
+};
+
+module.exports = { getUsers, getUserById, patchById, addUser, deleteUser };
