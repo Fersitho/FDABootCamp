@@ -82,6 +82,8 @@ const addUser = async (req, res) => {
   }
 };
 
+
+
 const deleteUser = async (req, res) => {
   try {
     const userId = req.params.id; // Obtiene el ID del usuario de los parámetros de la solicitud
@@ -99,5 +101,6 @@ const deleteUser = async (req, res) => {
       .json({ status: "failed", data: null, error: error.message }); // Maneja cualquier error que ocurra
   }
 };
+
 
 module.exports = { getUsers, getUserById, patchById, addUser, deleteUser };

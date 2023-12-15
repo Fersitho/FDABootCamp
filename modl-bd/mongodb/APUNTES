@@ -32,7 +32,7 @@ db.films.find({ 'cast.0' : 'Paco Meliano' })
 
 
 # sort es muy biena nos ordena si pones -1 DESC 1 ASC 0 ni puta idea.
-
+.sort({ algo: -1 })
 # esta mal david!!! EL SORT NO ES ASI IOOO!
  # nos devuelve la busca en ordenada desc y nos da el primero, de locos.
 db.restaurantes.find().sort({ restaurant_id: -1 }).limit(1)

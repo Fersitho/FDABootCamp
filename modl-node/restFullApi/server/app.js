@@ -9,7 +9,12 @@ const express = require("express")
 const PORT = 3000
 const userRouter = require("../routers/userRoutes")
 const productRoutes = require("../routers/productRoutes")
+
+const swaggerUi = require("swagger-ui-express")
+const swaggerJSDoc = require("../swagger/swaggerConfig")
+
 const app = express()
+
 
 require("dotenv").config();
 
@@ -30,6 +35,8 @@ db.on("disconnected", () => {
 
 app.use(express.json())
 
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJSDoc))
 // apis
 app.use("/users", userRouter)
 app.use("/products", productRoutes)

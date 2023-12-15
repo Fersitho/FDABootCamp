@@ -26,3 +26,6 @@ module.exports = user;
 // 1. autenticación basada en token (jsonwebtoken) con sus respectivos middlewares
 // 2. encriptar contraseñas (con bcryptjs)
 // 3. configurar CORS para permitir solicitudes HTTP entre sitios o validar los datos con Express Validator.
+
+
+// autenticación basada en token (jsonwebtoken) con sus middlewares y configuracion de CORS para permitir solicitudes HTTP entre sitios
