@@ -8,6 +8,7 @@ const {
 
 const router = require("express").Router();
 
+const verifyToken = require("../middlewares/auth");
 /**
  * @swagger
  * /users:
@@ -41,7 +42,7 @@ router.get("/", getUsers);
  *       404:
  *         description: Usuario no encontrado para el ID proporcionado.
  */
-router.get("/:id", getUserById);
+router.get("/:id", verifyToken, getUserById);
 
 /**
  * @swagger

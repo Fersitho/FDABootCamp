@@ -9,6 +9,7 @@ const express = require("express")
 const PORT = 3000
 const userRouter = require("../routers/userRoutes")
 const productRoutes = require("../routers/productRoutes")
+const loginRoutes = require("../routers/loginRoutes")
 
 const swaggerUi = require("swagger-ui-express")
 const swaggerJSDoc = require("../swagger/swaggerConfig")
@@ -40,6 +41,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJSDoc))
 // apis
 app.use("/users", userRouter)
 app.use("/products", productRoutes)
+app.use("/auth", loginRoutes)
 
 
 app.listen(PORT, () => {
