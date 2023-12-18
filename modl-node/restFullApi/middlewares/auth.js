@@ -18,3 +18,8 @@ const verifyToken = (req, res, next) => {
 };
 
 module.exports = verifyToken;
+
+
+// Con jwt tokens, podemos hacer un users persist que solo permita tener sesion iniciada en un dispositivo.
+
+// Desde el front un setInterval() de una funcion que compruebe que el mas nueva, la cosa es que hace falta guardar los hash de todas formas como un persist normal, no tiene sentido
