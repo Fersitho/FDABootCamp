@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const { generateToken } = require("../utils/utilsJs");
 
 const verifyToken = (req, res, next) => {
   const token = req.header("auth-token");
@@ -10,24 +11,23 @@ const verifyToken = (req, res, next) => {
 
   try {
     const verified = jwt.verify(token, process.env.TOKEN_SECRET);
-
-    // console.log(verified);
-    // console.log("Current Time:", new Date());
-    // console.log("Token Expiration Time:", new Date(verified.exp * 1000));
-
     req.user = verified;
     next();
   } catch (err) {
     try {
-      const verifiedRefresh = jwt.verify(
-        tokenRefresh,
-        process.env.TOKEN_REFRESH
-      );
-
+      const verifiedRefresh = jwt.verify(tokenRefresh,process.env.TOKEN_REFRESH);
       req.user = verifiedRefresh;
+
+      // Generar nuevos tokens (tanto de acceso como de actualización)
+      const newToken = generateToken(user, process.env.TOKEN_SECRET, "15min");
+      const newTokenRefresh = generateToken(user,process.env.TOKEN_REFRESH,"60min");
+
+      // Establecer los nuevos tokens en la respuesta asi se actualizan los tokens en el cliente!
+      res.header("auth-token", newToken);
+      res.header("auth-token-refresh", newTokenRefresh);
+
       next();
     } catch (error) {
-      
       res.status(401).send("Access denied invalid token");
     }
   }

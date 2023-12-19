@@ -109,20 +109,24 @@ const updateColorsProductById = async (req, res) => {
     const colorNews = product.colors.concat(colors);
 
     // 1 Hacemos un set de nuestro array y lo destructuramos para crear el nuevo array sin duplicados.
-    const colorsinDuplicados = [... new Set(colorNews)] 
+    const colorsinDuplicados = [...new Set(colorNews)];
 
     product.colors = colorsinDuplicados.sort();
-    
+
     await product.save();
-    
+
     res
       .status(200)
-      .json({ status: "succeeded", message: "Producto editado, colores actualizadops", error: null });
+      .json({
+        status: "succeeded",
+        message: "Producto editado, colores actualizadops",
+        error: null,
+      });
     // // 2 Hacemos un filter, 3º paremetro es el array colorNews, con indexOf comrpobamos si esta duplicado o no.
     // const colorDeleteDuplicate = colorNews.filter(
-    //   (color, index, colorNews) => colorNews.indexOf(color) === index 
+    //   (color, index, colorNews) => colorNews.indexOf(color) === index
     // );
-    
+
     // // 3 foreach + includes - sin concatenar!
     // product.colors.forEach( element => {
 
@@ -131,8 +135,6 @@ const updateColorsProductById = async (req, res) => {
     //   }
 
     // });
-
-      
   } catch (error) {
     res.status(500).json({
       status: "failed",
@@ -240,7 +242,32 @@ const delProdColor = async (req, res) => {
       .json({ status: "failed", data: null, error: error.message });
   }
 };
+// Aumenta un 20% el precio de todos los productos.
 
+const upAllPriceByPercent = async (req, res) => {
+  try {
+    const products = await Product.find();
+    const porcent = req.body.porcent / 100 || 0.2;
+
+    products.forEach(async (prd) => {
+      prd.price = parseFloat((prd.price + (prd.price * porcent)).toFixed(2));
+      await prd.save(); // Guardar cada producto individualmente Buena practica
+    });
+
+    res.status(200).json({
+      status: "succeeded",
+      message: "Productos subidos de precio",
+      error: null,
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "failed",
+      data: null,
+      error: "Error subiendo los precios: " + error,
+    });
+  }
+};
+// Envía un correo con un listado de productos superiores a 50€
 module.exports = {
   getProducts,
   getProductById,
@@ -250,6 +277,7 @@ module.exports = {
 
   getMediaProduct,
   delProdColor,
+  upAllPriceByPercent,
 };
 
 // const deleteColorByProductId = async (req, res) => {

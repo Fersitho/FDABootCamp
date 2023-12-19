@@ -56,16 +56,13 @@ const login = async (req, res) => {
         const token = await generateToken(
           user,
           process.env.TOKEN_SECRET,
-          "1min"
+          "15min"
         );
         const tokenRefresh = await generateToken(
           user,
           process.env.TOKEN_REFRESH,
-          "2min"
+          "60min"
         );
-
-        console.log(token);
-        console.log(tokenRefresh);
 
         return res.status(200).json({
           status: "Success",
@@ -98,11 +95,11 @@ const refreshToken = async (req, res) => {
     });
   }
 
-  const token = generateToken(req.user, process.env.TOKEN_SECRET, "1min");
+  const token = generateToken(req.user, process.env.TOKEN_SECRET, "15min");
   const tokenRefresh = generateToken(
     req.user,
     process.env.TOKEN_REFRESH_SECRET,
-    "2min"
+    "60min"
   );
 
   res.status(201).json({
