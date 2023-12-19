@@ -1,6 +1,6 @@
 const LoginModel = require("../models/loginModel");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const { generateToken } = require("../utils/utilsJs");
 
 const signup = async (req, res) => {
   try {
@@ -53,18 +53,25 @@ const login = async (req, res) => {
       );
 
       if (validatePassword) {
-        const token = jwt.sign(
-          { id: user.id, email: user.email, role: user.role },
+        const token = await generateToken(
+          user,
           process.env.TOKEN_SECRET,
-          { expiresIn: "60min" }
+          "1min"
+        );
+        const tokenRefresh = await generateToken(
+          user,
+          process.env.TOKEN_REFRESH,
+          "2min"
         );
 
         console.log(token);
+        console.log(tokenRefresh);
 
         return res.status(200).json({
           status: "Success",
           message: "Usuario logeado.",
           token: token,
+          tokenRefresh: tokenRefresh,
           error: null,
         });
       }
@@ -77,11 +84,39 @@ const login = async (req, res) => {
     res.status(404).json({
       status: "Failed",
       message: "Error en usuario y contraseña.",
+      error: error,
     });
   }
+};
+
+const refreshToken = async (req, res) => {
+  if (!req.user) {
+    res.status(404).json({
+      status: "Failed",
+      message: "Access denied",
+      error: error,
+    });
+  }
+
+  const token = generateToken(req.user, process.env.TOKEN_SECRET, "1min");
+  const tokenRefresh = generateToken(
+    req.user,
+    process.env.TOKEN_REFRESH_SECRET,
+    "2min"
+  );
+
+  res.status(201).json({
+    status: "Success",
+    data: {
+      token,
+      tokenRefresh,
+    },
+    error: null,
+  });
 };
 
 module.exports = {
   signup,
   login,
+  refreshToken,
 };
