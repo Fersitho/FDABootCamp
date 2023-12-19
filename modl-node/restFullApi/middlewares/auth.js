@@ -16,10 +16,10 @@ const verifyToken = (req, res, next) => {
   } catch (err) {
     try {
       const verifiedRefresh = jwt.verify(tokenRefresh,process.env.TOKEN_REFRESH);
-      //con req.user --> cambiamos el valor del req.user por el token valido para que esta solicitud funcione, luego actualiamos ambos token newToken y newTokenResfreh.
-      
       req.user = verifiedRefresh;
+      //con req.user --> cambiamos el valor del req.user por el tokenRefresh que es valido.
 
+      // actualizamos ambos tokens --> newToken y newTokenResfreh.
       // Generar nuevos tokens (tanto de acceso como de actualización)
       const newToken = generateToken(user, process.env.TOKEN_SECRET, "15min");
       const newTokenRefresh = generateToken(user,process.env.TOKEN_REFRESH,"60min");
