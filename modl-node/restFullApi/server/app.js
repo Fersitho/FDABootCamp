@@ -7,7 +7,9 @@
 const mongoose = require("mongoose")
 const express = require("express")
 const PORT = 3000
+
 const userRouter = require("../routers/userRoutes")
+
 const productRoutes = require("../routers/productRoutes")
 const loginRoutes = require("../routers/loginRoutes")
 
