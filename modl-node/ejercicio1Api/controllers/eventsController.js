@@ -126,7 +126,6 @@ const profitOneEvent = async (req, res) => {
 
 const profitAllEvents = async (req, res) => {
   try {
-    const { idEvent } = req.params;
     const events = await Events.find();
 
     let profit = 0;

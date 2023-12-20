@@ -35,7 +35,7 @@ app.use("/auth", userRoutes)
 const eventsRoutes = require('../routes/eventsRoutes')
 app.use("/events", eventsRoutes)
 
-
+// lanzamos el server
 app.listen(PORT, () => {
     console.log("Server is running")
 })
