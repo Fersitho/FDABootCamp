@@ -18,7 +18,7 @@ const signup = async (req, res) => {
       password: await bcrypt.hash(req.body.password, 10),
       createdAt: new Date(),
     });
-    console.log(newUser)
+   
     await newUser.save();
     return res.status(201).json({
       status: "Success",
