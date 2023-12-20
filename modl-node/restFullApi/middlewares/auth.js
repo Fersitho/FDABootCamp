@@ -12,17 +12,19 @@ const verifyToken = (req, res, next) => {
   try {
     const verified = jwt.verify(token, process.env.TOKEN_SECRET);
     req.user = verified;
+    console.log('Fecha de expiración del token:', new Date(verified.exp * 1000));
     next();
   } catch (err) {
     try {
+      console.log('entro')
       const verifiedRefresh = jwt.verify(tokenRefresh,process.env.TOKEN_REFRESH);
       req.user = verifiedRefresh;
       //con req.user --> cambiamos el valor del req.user por el tokenRefresh que es valido.
 
       // actualizamos ambos tokens --> newToken y newTokenResfreh.
       // Generar nuevos tokens (tanto de acceso como de actualización)
-      const newToken = generateToken(user, process.env.TOKEN_SECRET, "15min");
-      const newTokenRefresh = generateToken(user,process.env.TOKEN_REFRESH,"60min");
+      const newToken = generateToken(req.user, process.env.TOKEN_SECRET, "15min");
+      const newTokenRefresh = generateToken(req.user,process.env.TOKEN_REFRESH,"60min");
 
       // Establecer los nuevos tokens en la respuesta asi se actualizan los tokens en el cliente!
       res.header("auth-token", newToken);
