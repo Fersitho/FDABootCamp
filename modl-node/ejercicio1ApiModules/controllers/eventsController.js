@@ -51,7 +51,7 @@ export const addUserGoEvent = async (req, res) => {
   try {
     const { idEvent } = req.params;
     // console.log('req.user', req.user)
-    const idUser = req.user.user._id;
+    const idUser = req.user.idUser;
     const eventLoad = await Events.findById(idEvent);
 
     if (!eventLoad.attendees.includes(idUser)) {
@@ -82,7 +82,7 @@ export const addUserGoEvent = async (req, res) => {
 
 export const getUserEvents = async (req, res) => {
   try {
-    const idUser = req.user.user._id;
+    const idUser = req.user.idUser;
     const eventsUser = await Events.find({
       attendees: { $elemMatch: { $eq: idUser } },
     });

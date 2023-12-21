@@ -62,13 +62,13 @@ export const login = async (req, res) => {
       );
 
       if (validatePassword) {
-        const token = await generateToken(
-          {user},
+        const token = generateToken(
+          {email: user.email, idUser: user._id},
           process.env.TOKEN_SECRET,
           "15min"
         );
-        const tokenRefresh = await generateToken(
-          {user},
+        const tokenRefresh = generateToken(
+          {email: user.email, idUser: user._id},
           process.env.TOKEN_REFRESH,
           "60min"
         );
