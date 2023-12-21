@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken"
 
 const generateToken = (user, tokenSecret, timeToExpired) => {
     if (!user || !tokenSecret || !timeToExpired) {
