@@ -7,13 +7,14 @@ const verifyToken = (req, res, next) => {
   const tokenRefresh = req.header("auth-token-refresh");
 
   if (!token || !tokenRefresh) {
+    console.log(error)
     return res.status(401).send("Access denied");
   }
 
   try {
     const verified = jwt.verify(token, process.env.TOKEN_SECRET);
     req.user = verified;
-    console.log('Fecha de expiración del token:', new Date(verified.exp * 1000));
+    // console.log('Fecha de expiración del token:', new Date(verified.exp * 1000));
     next();
   } catch (err) {
     try {

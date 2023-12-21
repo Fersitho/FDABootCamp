@@ -50,6 +50,7 @@ export const createEvent = async (req, res) => {
 export const addUserGoEvent = async (req, res) => {
   try {
     const { idEvent } = req.params;
+    // console.log('req.user', req.user)
     const idUser = req.user.user._id;
     const eventLoad = await Events.findById(idEvent);
 
@@ -70,8 +71,8 @@ export const addUserGoEvent = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error)
-    res.status(404).json({
+    // console.log(error)
+    res.status(500).json({
       status: "Failed",
       message: "Error añadiendo usuario a evento",
       error: error,

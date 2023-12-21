@@ -63,12 +63,12 @@ export const login = async (req, res) => {
 
       if (validatePassword) {
         const token = await generateToken(
-          user,
+          {user},
           process.env.TOKEN_SECRET,
           "15min"
         );
         const tokenRefresh = await generateToken(
-          user,
+          {user},
           process.env.TOKEN_REFRESH,
           "60min"
         );
@@ -87,6 +87,7 @@ export const login = async (req, res) => {
 
     throw error();
   } catch (error) {
+    console.log(error)
     res.status(404).json({
       status: "Failed",
       message: "Error en usuario y contraseña.",
