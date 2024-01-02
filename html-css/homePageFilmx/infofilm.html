@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Filmax | Info peli</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/fav-icon.png">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link property="stylesheet" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic|Roboto+Condensed:300,300i,400,400i,700,700i|Lora:400,400i,700,700i&amp;subset=latin,latin-ext"
+        type="text/css" media="all">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="stylesheet" href="https://kit.fontawesome.com/f7dcd3dab7.css" crossorigin="anonymous">
+</head>
+
+<body class="body" id="top">
+    <!-- Header principal -->
+    <header class="header">
+        <section class="nav-header max-content">
+            <img src="./assets/img/logo-1x.png" alt="FILMAX la mejor web para ver peliculas online"></img>
+
+            <nav>
+                <ul class="nav-header-ul">
+                    <li>
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+                    <span> / </span>
+                    <li>
+                        <a href="#">
+                            Features
+                        </a>
+                    </li>
+                    <span> / </span>
+                    <li>
+                        <a href="#">
+                            About
+                        </a>
+                    </li>
+                    <span> / </span>
+                    <li>
+                        <a href="#">
+                            News
+                        </a>
+                    </li>
+                    <span> / </span>
+                    <li>
+                        <a href="#">
+                            Contacts
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <section class="busqueda-redes">
+
+                <search>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27px" viewBox="0 0 512 512">
+                            <path
+                                d="M368 208A160 160 0 1 0 48 208a160 160 0 1 0 320 0zM337.1 371.1C301.7 399.2 256.8 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 48.8-16.8 93.7-44.9 129.1L505 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L337.1 371.1z" />
+                        </svg>
+                    </button>
+
+                </search>
+
+                <span>|</span>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 512 512">
+                                    <path
+                                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 512 512">
+                                    <path
+                                        d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 448 512">
+                                    <path
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 576 512">
+                                    <path
+                                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </section>
+        </section>
+    </header>
+
+
+
+    <main class="main-info-film">
+
+        <div class="header-info-film">
+
+            <section class="header-info-film-grid">
+
+
+
+                <div class="conteiner-header-info-film">
+                    <div class="titulo-pelicula">
+                        <h3>
+                            The Equalizer Colletion
+                        </h3>
+                        <div>
+                            <h1>
+                                The Equalizer 2 <span>2018</span>
+                            </h1>
+    
+                        </div>
+                    </div>
+                    
+
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <path
+                                d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                        </svg>
+
+                        <div>
+                            <h3>73%</h3>
+                            <p>10.5k votes</p>
+                        </div>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <path
+                                d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z" />
+                        </svg>
+
+                        <div>
+                            <h3 class="rate-move">Rate this movie</h3>
+                            <p>What did you think?</p>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div>
+                            <h3>244k</h3>
+                            <p>watchers</p>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div>
+                            <h3>353k</h3>
+                            <p>plays</p>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div>
+                            <h3>270k</h3>
+                            <p>collected</p>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div>
+                            <h3>57</h3>
+                            <p>comments</p>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div>
+                            <h3>25.9k</h3>
+                            <p>list</p>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div>
+                            <h3>97</h3>
+                            <p>favorited</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </section>
+        </div>
+
+        <section class="main-info-film-grid">
+
+            <aside class="aside-nav-info">
+                <div class="caratula-play">
+                    <img src=".../../assets/img/infoFilm/caratulaEq2.webp" alt="">
+
+                    <a class="ver-ahora" name="ver-ahora" href="#" referrerpolicy="no-referer">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                            <path
+                                d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                        </svg>
+                        <div class="container-whatch-now">
+                            <h3>Watch now</h3>
+                            <p>10 services</p>
+                        </div>
+
+                    </a>
+                </div>
+
+
+                <nav class="nav-aside">
+                    <ul>
+                        <li>
+                            <a href="#actors">Actors</a>
+                        </li>
+                        <li>
+                            <a href="#overview">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#comments">Comments</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <section class="grid-cont-info2 actores-info-film">
+                <h3>ACTORS</h3>
+                <article class="slide-snap-scroll" id="actors">
+
+
+                    <figure>
+                        <img src="./assets/img/infoFilm/denzel.jpg" alt="Actor Denzel Washington">
+                        <p>
+                            Denzel Washington
+                        </p>
+                        <p>
+                            Robert McCall
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/2e3540ca60.jpg.webp" alt="Actor Dakota Fannning">
+                        <p>
+                            Dakota Fannning
+                        </p>
+                        <p>
+                            Emma Collins
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/7eb90fa34e.jpg.webp" alt="Actor Eugenio Mastrandrea">
+                        <p>
+                            Eugenio Mastrandrea
+                        </p>
+                        <p>
+                            Gio Bonucci
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/10e032cd3c.jpg.webp" alt="Actor Gaia Scodellaro">
+                        <p>
+                            Gaia Scodellaro
+                        </p>
+                        <p>
+                            Aminah
+                        </p>
+                    </figure>
+
+                    <figure>
+                        <img src="./assets/img/infoFilm/e83faf99b1.jpg.webp" alt="Actor David Denman">
+                        <p>
+                            David Denman
+                        </p>
+                        <p>
+                            Frank Conroy
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/83f612a548.jpg.webp" alt="Actor Remo Girone">
+                        <caption>
+                            <p>
+                                Remo Girone
+                            </p>
+                            <p>
+                                Enzo Arisio
+                            </p>
+                        </caption>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/e82690f977.jpg.webp" alt="Actor Andrea Scard...">
+                        <p>
+                            Andrea Scarduzio
+                        </p>
+                        <p>
+                            Vincnt Quaranta
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/047feaa95f.jpg.webp" alt="Actor Andrea Dodero">
+                        <p>
+                            Andrea Dodero
+                        </p>
+                        <p>
+                            Marco Quaranta
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/17ebd509f0.jpg.webp" alt="Actor Daniele Perrone">
+                        <p>
+                            Daniele Perrone
+                        </p>
+                        <p>
+                            Angelo
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/987d884555.jpg.webp" alt="Actor Sonia Ammar">
+                        <p>
+                            Sonia Ammar
+                        </p>
+                        <p>
+                            Chiara Bonucci
+                        </p>
+                    </figure>
+                    <figure>
+                        <img src="./assets/img/infoFilm/1471ab63ce.jpg.webp" alt="Actor Manuela Tasciotti">
+                        <p>
+                            Manuela Tasciotti
+                        </p>
+                        <p>
+                            Carmela
+                        </p>
+                    </figure>
+
+
+
+
+
+                </article>
+            </section>
+
+            <section id="overview" class="grid-cont-info trailer-info-film">
+
+                <div class="section-info-contenedor">
+                    <article class="section-overview">
+                        <iframe class="video-trailar-repro"
+                            src="https://www.youtube.com/embed/HyNJ3UrGk_I?si=oHeWfwsiAkPr6oxJ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+
+                        <p class="resumen-peli">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+
+                        <cite>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                                <path
+                                    d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+                            </svg>
+                            <div>
+                                <h4>
+                                    Onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna
+                                    aliqua enim ad minim veniam, quis nostrud exercitation
+                                </h4>
+                                <strong> Roger</strong>
+                            </div>
+
+                        </cite>
+
+                        <p class="resumen-peli">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+
+                        <ol>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+                            <li>Incididunt ut labore et dolore magna aliqua</li>
+                            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                            <li>Laboris nisi ut aliquip ex ea commodo consequat</li>
+                            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+                        </ol>
+
+                        <p class="resumen-peli">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+
+
+                        <article class="tags-films">
+                            <h5>Tags: </h5>
+                            <a href="">shows, </a>
+                            <a href="">trailers</a>
+                        </article>
+
+                    </article>
+
+
+                    <article class="section-about">
+
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <h5>
+                                            Geostorm
+                                        </h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h5>
+                                            Stranger Things
+                                        </h5>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+                        <article>
+                            <img src="./assets/img/infoFilm/5a900e117c920391737e33b6cb3a72af.jpg" alt="DAVID MATINSON">
+                            <div>
+                                <h3>
+                                    ABOUT DAVID MATINSON
+                                </h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt
+                                    ut labore et dolore magna aliqua.
+                                </p>
+
+                                <a href="">
+                                    READ MORE
+                                </a>
+                            </div>
+                        </article>
+
+                    </article>
+
+
+                    <aside class="some-peli-info-film">
+
+                        <section class="some-peli-info section-lastet-news">
+                            <div class="max-content container2">
+                                <h2>YOU MAY ALSO LIKE</h2>
+                                <div class="grid-2-films">
+                                    <article>
+                                        <div>
+
+                                            <p>
+                                                <a href="#">
+                                                    Home
+                                                </a>
+                                                <a href="#">
+                                                    Drama,
+                                                </a>
+                                                <a href="#">
+                                                    Thriller
+                                                </a>
+                                            </p>
+
+                                            <h3>GOTHAM</h3>
+                                            <time>
+                                                <p>On Dec 4, 2017</p>
+
+                                                <p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M32 240c0-91.4 93.8-176 224-176s224 84.6 224 176s-93.8 176-224 176c-32 0-63-5.9-93.5-16.2c-9.9-3.3-20.7-1.8-29.2 4.2c-15.4 10.7-31.4 20-48.4 27.4L91.2 446l-6.4-14.7c-10.5 4.6-21.5 8.6-32.7 11.5c.5-.9 1.1-1.8 1.6-2.6C68 416.5 76.3 391 79.4 363.9c1-9.2-2.1-17.7-7.4-23.9c-24.5-29.4-40-62.9-40-100zM256 32C114.5 32 0 125.2 0 240c0 46.6 19.6 87.1 47.4 120.5c0 .1 .1 .1 .1 .2c-2.6 22.6-9.5 43.5-21.3 63.1c-6.5 10.8-13.5 20.8-21.7 29c-4.5 4.6-5.9 11.5-3.4 17.4s8.3 9.8 14.8 9.8c28.7 0 57.6-8.9 81.6-19.3c19.2-8.4 37.1-18.7 53.9-30.5c.2-.1 .5-.2 .7-.1C185.5 441.3 220 448 256 448c141.5 0 256-93.2 256-208S397.5 32 256 32zM80 224c-8.8 0-16 7.2-16 16s7.2 16 16 16H304c8.8 0 16-7.2 16-16s-7.2-16-16-16H80zm288 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H368zM112 288c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H112zm128 0c-8.8 0-16 7.2-16 16s7.2 16 16 16H400c8.8 0 16-7.2 16-16s-7.2-16-16-16H240z" />
+                                                    </svg>
+
+                                                    <span> 0 </span>
+                                                </p>
+
+
+                                            </time>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div>
+
+                                            <p>
+                                                <a href="#">
+                                                    Home
+                                                </a>
+                                                <a href="#">
+                                                    Drama,
+                                                </a>
+                                                <a href="#">
+                                                    Thriller
+                                                </a>
+                                            </p>
+
+                                            <h3>Stranger Things</h3>
+                                            <time>
+                                                <p>On Dec 4, 2017</p>
+
+                                                <p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M32 240c0-91.4 93.8-176 224-176s224 84.6 224 176s-93.8 176-224 176c-32 0-63-5.9-93.5-16.2c-9.9-3.3-20.7-1.8-29.2 4.2c-15.4 10.7-31.4 20-48.4 27.4L91.2 446l-6.4-14.7c-10.5 4.6-21.5 8.6-32.7 11.5c.5-.9 1.1-1.8 1.6-2.6C68 416.5 76.3 391 79.4 363.9c1-9.2-2.1-17.7-7.4-23.9c-24.5-29.4-40-62.9-40-100zM256 32C114.5 32 0 125.2 0 240c0 46.6 19.6 87.1 47.4 120.5c0 .1 .1 .1 .1 .2c-2.6 22.6-9.5 43.5-21.3 63.1c-6.5 10.8-13.5 20.8-21.7 29c-4.5 4.6-5.9 11.5-3.4 17.4s8.3 9.8 14.8 9.8c28.7 0 57.6-8.9 81.6-19.3c19.2-8.4 37.1-18.7 53.9-30.5c.2-.1 .5-.2 .7-.1C185.5 441.3 220 448 256 448c141.5 0 256-93.2 256-208S397.5 32 256 32zM80 224c-8.8 0-16 7.2-16 16s7.2 16 16 16H304c8.8 0 16-7.2 16-16s-7.2-16-16-16H80zm288 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H368zM112 288c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H112zm128 0c-8.8 0-16 7.2-16 16s7.2 16 16 16H400c8.8 0 16-7.2 16-16s-7.2-16-16-16H240z" />
+                                                    </svg>
+
+                                                    <span> 0 </span>
+                                                </p>
+
+
+                                            </time>
+                                        </div>
+                                    </article>
+                                </div>
+
+
+                            </div>
+
+                        </section>
+                    </aside>
+
+
+                    <section class="add-comment-info-film" id="comments">
+                        <h3>Leave a comment</h3>
+                        <form>
+                            <div>
+                                <input id="newsLetterInputFooter" type="text" placeholder="Your name *" name="" id="" />
+                                <input id="newsLetterInputFooter" type="email" placeholder="Your email *" name=""
+                                    id="" />
+                            </div>
+
+                            <input type="checkbox" id="checkbox1" value="save-datos" />
+                            <label for="checkbox1">Save my name, email, and website in this browser for the next time I
+                                comment.</label>
+
+                            <textarea placeholder="YOUR COMMENT *" name="" id="" cols="30" rows="10"></textarea>
+
+
+                            <button type="submit" class="buttonRed"> Leave a comment </button>
+
+                        </form>
+                    </section>
+
+
+                </div>
+
+
+                <aside class="trailer-info-aside">
+
+                    <section class="aside-news news-refactor">
+                        <h2> Media </h2>
+
+                        <div class="aside-news-bog">
+                            <a href="#" target="_blank">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                                        <path
+                                            d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+                                    </svg>
+                                    Facebook
+                                </span>
+
+
+                                Follow
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                        <path
+                                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                                    </svg>
+                                    Twitter
+                                </span>
+
+
+                                Follow
+                            </a>
+                            <a href="#" target="_blank">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                                        <path
+                                            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+                                    </svg>
+                                    YouTube
+                                </span>
+
+
+                                Follow
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="aside-news news-refactor">
+                        <h2> Recent News </h2>
+
+                        <div class="aside-news-bog">
+                            <article>
+                                <a href="#">
+                                    <img src="./assets/img/post-6-copyright-97x81.jpg" alt="">
+                                </a>
+
+                                <div>
+                                    <h3>
+                                        <a href="#">
+                                            Attending ‘Star Wars’ Screening in ‘Star Trek’ Costume
+                                        </a>
+                                    </h3>
+                                    <time>
+                                        <a href="#">
+                                            on Dec 15, 2017
+                                        </a>
+                                    </time>
+                                </div>
+
+                            </article>
+
+                            <article>
+                                <a href="#">
+                                    <img src="./assets/img/MicrosoftTeams-image (6).png" alt="">
+                                </a>
+                                <div>
+                                    <h3>
+                                        <a href="#">
+                                            Reuniting at the 2018 Coachella Music Festival
+                                        </a>
+                                    </h3>
+
+                                    <time>
+                                        <a href="#">
+                                            on Dec 12, 2017
+                                        </a>
+                                    </time>
+                                </div>
+
+                            </article>
+
+                            <article>
+                                <a href="#">
+                                    <img src="./assets/img/MicrosoftTeams-image (9).png" alt="">
+                                </a>
+                                <div>
+                                    <h3>
+                                        <a href="#">
+                                            ‘Titanic’, ‘Goonies’ Named National Film Treasures
+                                        </a>
+                                    </h3>
+                                    <time>
+                                        <a href="#">
+                                            on Dec 8 2017
+                                        </a>
+                                    </time>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="aside-news news-refactor">
+                        <h2> Top trailer </h2>
+
+                        <div class="aside-news-bog" id="top-trailers">
+
+                            <article>
+                                <img src="./assets/img/post-28.jpg" alt="">
+                                <div>
+                                    <h4> Top trailers </h4>
+                                    <time>On Jul 10, 2017</time>
+                                </div>
+                                <h3>The Biggest Live Show Failure of the Last Year</h3>
+                            </article>
+
+                            <article>
+                                <img src="./assets/img/post-29.jpg" alt="">
+                                <div>
+                                    <h4> Top trailers </h4>
+                                    <time>On Jul 6, 2017</time>
+                                </div>
+                                <h3>Top Actors that Have Been Fired from Shows</h3>
+                            </article>
+
+                        </div>
+                    </section>
+
+                </aside>
+            </section>
+
+
+
+
+            </div>
+
+    </main>
+
+    <!-- Footer principal -->
+    <footer class="footer">
+        <div class="max-content container">
+
+            <figure>
+                <img src="./assets/img/logo-1x.png" alt="">
+                <figcaption>
+                    ThemeREX © 2023. All rights reserved.
+                </figcaption>
+            </figure>
+
+            <nav>
+                <h3>Movies</h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Film News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Action
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Coming Soon
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Most Popular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Top Trailers
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav>
+                <h3>Additional links</h3>
+                <ul>
+                    <li>
+                        <a href="#">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Service Plus
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Contacs
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section>
+
+                <h3>NewsLetter</h3>
+                <form>
+                    <input id="newsLetterInputFooter" type="email" placeholder="Newsletter sign up" name="" id="" />
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                            <path
+                                d="M440.6 273.4c4.7-4.5 7.4-10.8 7.4-17.4s-2.7-12.8-7.4-17.4l-176-168c-9.6-9.2-24.8-8.8-33.9 .8s-8.8 24.8 .8 33.9L364.1 232 24 232c-13.3 0-24 10.7-24 24s10.7 24 24 24l340.1 0L231.4 406.6c-9.6 9.2-9.9 24.3-.8 33.9s24.3 9.9 33.9 .8l176-168z" />
+                        </svg>
+                    </button>
+                </form>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 512 512">
+                                    <path
+                                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 512 512">
+                                    <path
+                                        d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 448 512">
+                                    <path
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 576 512">
+                                    <path
+                                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </section>
+
+        </div>
+
+    </footer>
+
+    <!-- Cositas voladoras, fixed en body-->
+    <nav class="menu-fixed">
+        <ul>
+            <li>
+            </li>
+
+            <li>
+            </li>
+
+            <li>
+            </li>
+        </ul>
+    </nav>
+
+    <a href="#top" class="ancla-top"></a>
+</body>
+
+</html>

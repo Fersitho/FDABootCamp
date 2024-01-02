@@ -19,6 +19,7 @@ const verifyToken = (req, res, next) => {
   } catch (err) {
     try {
       const verifiedRefresh = jwt.verify(tokenRefresh,process.env.TOKEN_REFRESH);
+      console.log('Fecha de expiración del token:', new Date(verifiedRefresh.exp * 1000));
       req.user = verifiedRefresh;
       //con req.user --> cambiamos el valor del req.user por el tokenRefresh que es valido.
 

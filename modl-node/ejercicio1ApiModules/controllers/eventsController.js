@@ -50,7 +50,6 @@ export const createEvent = async (req, res) => {
 export const addUserGoEvent = async (req, res) => {
   try {
     const { idEvent } = req.params;
-    // console.log('req.user', req.user)
     const idUser = req.user.idUser;
     const eventLoad = await Events.findById(idEvent);
 
@@ -89,7 +88,7 @@ export const getUserEvents = async (req, res) => {
 
     return res.status(200).json({
       status: "Success",
-      message: "Usuarios listados",
+      message: "Eventos usuario listados",
       data: eventsUser,
       error: null,
     });
@@ -97,7 +96,7 @@ export const getUserEvents = async (req, res) => {
     console.log(error);
     res.status(404).json({
       status: "Failed",
-      message: "Error listando usuarios",
+      message: "Error listando eventos del usuario",
       error: error,
     });
   }
@@ -118,7 +117,7 @@ export const profitOneEvent = async (req, res) => {
     console.log(error);
     res.status(404).json({
       status: "Failed",
-      message: "Error listando usuarios",
+      message: "Error evento",
       error: error,
     });
   }
