@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "outDir": "./ejercicios_js",
+    "rootDir": "./ejercicios",
+    "esModuleInterop": true,
+    "strict": true,
+    "moduleResolution": "node"
+  },
+  "include": ["ejercicios/**/*.ts"],
+  "exclude": ["node_modules"]
+}

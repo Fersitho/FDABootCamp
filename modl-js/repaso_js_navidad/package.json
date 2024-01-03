@@ -1,0 +1,22 @@
+{
+  "name": "repaso_js_navidad",
+  "version": "1.0.0",
+  "description": "practicas fda repaso en ts a js",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./ejercicios_js/ejercicios1.js",
+    "pokeApi": "nodemon -e ts,js,html -w ./ejercicios/ejercicios1.ts -w ./index.html -w ./assets/js/main.js -x \"tsc && http-server -p 3003\""
+  },
+  "author": "Fernanodo Diaz Alaminos",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "nodemon": "^3.0.2",
+    "typescript": "^5.3.3"
+  }
+}
