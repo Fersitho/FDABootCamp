@@ -12,6 +12,10 @@ const app = express();
 
 app.use(express.json());
 
+
+
+
+
 // configuracion mongoDB EVENTS
 const urlMongo = process.env.DATABASE_URL_DEV;
 mongoose.connect(urlMongo);
@@ -29,6 +33,10 @@ db.on("disconnected", () => {
 
 // SWAGGER DOC API
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJSDoc));
+
+
+
+
 
 // API ROUTES
 import movieRoutes from "../routes/movieRoutes.js";
