@@ -1,0 +1,116 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.screen {
+  text-align: right;
+  padding: 10px;
+  background-color: #eee;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  align-self: stretch;
+}
+
+.screen p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.screen h2 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, minmax(50px, 1fr));
+  grid-gap: 5px;
+  max-width: 360px;
+  min-width: 360px;
+  padding: 10px;
+}
+
+.keyboard button {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+/* Estilos específicos para cada botón */
+.keyboard button:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.keyboard button:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.keyboard button:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.keyboard button:nth-child(4) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+/* Estilo específico para el botón "Historial" */
+/* .keyboard button:nth-child(8) {
+  grid-column: 4;
+  grid-row: 2/4;
+} */
+/* Estilo específico para el botón "=" */
+.keyboard button:nth-child(14) {
+  grid-column: 4;
+  grid-row: 2/6;
+}
+/* Estilo específico para el botón "0" */
+.keyboard button:nth-child(15) {
+  grid-column: 1/3;
+  grid-row: 5;
+}
+
+/* Estilos específicos para cada botón */
+.keyboard button:nth-child(1),
+.keyboard button:nth-child(2),
+.keyboard button:nth-child(3),
+.keyboard button:nth-child(4),
+.keyboard button:nth-child(14) {
+  background-color: #3498db;
+  color: #fff;
+}
+.keyboard button:hover {
+  background-color: #f3b4b4;
+}
+/* Estilo específico para el botón "0" */
+/* .keyboard button:nth-child(17) {
+  background-color: #3498db;
+  color: #fff;
+} */

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node ./ejercicios_js/ejercicios1.js",
-    "pokeApi": "nodemon -e ts,js,html -w ./ejercicios/ejercicios1.ts -w ./index.html -w ./assets/js/main.js -x \"tsc && http-server -p 3003\""
+    "pokeApi": "nodemon -e ts,js,html -w ./ejercicios/ejercicios1.ts -w ./index.html -w ./assets/js/main.js -x \"tsc && http-server -p 3003 -o\"",
+    "calculadora": "nodemon -e ts,js,html -w ./ejercicios/calculadora -x \"tsc && http-server -p 3003 -o -c-1 -a localhost -s -c-1 ./ejercicios_js/calculadora\""
   },
   "author": "Fernanodo Diaz Alaminos",
   "license": "ISC",
