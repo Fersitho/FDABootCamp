@@ -23,7 +23,7 @@ const Componet2 = ({ date = new Date("1990,5,12") }) => {
   return (
     <div>
       <p>
-        Naci el {date.toLocaleDateString("es-ES", options)} tengo {age} años.
+        Naci el {date.toLocaleDateString("es-ES", options)}, tengo {age} años.
       </p>
     </div>
   );
