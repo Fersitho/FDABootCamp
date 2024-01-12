@@ -8,8 +8,7 @@ const Componet2 = ({ date = new Date("1990,5,12") }) => {
     day: "numeric",
   };
 
-  const fecha = date;
-  const edad = calculateAge(date);
+  const age = calculateAge(date);
 
   // si es una arrow funcition tiene que ir encima de donde se use!
   function calculateAge(birthDay) {
@@ -24,7 +23,7 @@ const Componet2 = ({ date = new Date("1990,5,12") }) => {
   return (
     <div>
       <p>
-        Naci el {fecha.toLocaleDateString("es-ES", options)} tengo {edad} años.
+        Naci el {date.toLocaleDateString("es-ES", options)} tengo {age} años.
       </p>
     </div>
   );
