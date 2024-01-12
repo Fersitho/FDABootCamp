@@ -3,12 +3,12 @@ import Componet2 from "@/components/componet2";
 import React from "react";
 
 const Index2 = () => {
-    let data = new Date("1992,3,21")
-    console.log(data)
+    const date = new Date("1992,3,21")
+
   return (
     <div>
       <Componet1 name="Paco" />
-      <Componet2 dat2e={data} />
+      <Componet2 date={date} />
     </div>
   );
 };
