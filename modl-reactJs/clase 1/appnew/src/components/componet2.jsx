@@ -14,12 +14,12 @@ const Componet2 = ({ date = new Date("1990,5,12") }) => {
   function calculateAge(birthDay) {
     const now = new Date();
     const diferencia = now - birthDay;
-
     // Convertimos la diferencia a años
     const years = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
-
+    
     return years;
   }
+
   return (
     <div>
       <p>
