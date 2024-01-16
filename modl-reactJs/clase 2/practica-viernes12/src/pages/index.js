@@ -1,25 +1,22 @@
-import C1 from "@/components/c1";
-import C2 from "@/components/c2";
+import EmailComponent from "@/components/EmailComponent";
+import PasswordComponent from "@/components/PasswordComponent";
+import PersonalDataComponent from "@/components/PersonalDataComponent";
 
 export default function Home() {
 
-  const c1 = {
+  const userInfo = {
 
-    name: "GYARADOS"
+    Name: "Emilio",
+    LastName: "Pérez",
+    Email: "emilio.perez@gmail.com"
 
   }
 
-  const c2 = {
-
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-
-    tipo: ["Water ","Flying"]
-  }
-
-  return ( 
-    <div className="pacomermela">
-      <C1 name={c1.name}/>
-      <C2 description={c2.description} tipo={c2.tipo}/>
-    </div>
+  return (
+    <>
+      <PersonalDataComponent />
+      <EmailComponent />
+      <PasswordComponent />
+    </>
   );
 }
